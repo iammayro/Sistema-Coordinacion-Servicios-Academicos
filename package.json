@@ -1,0 +1,27 @@
+{
+  "name": "sistema-coordinacion-servicios-academicos",
+  "version": "1.0.0",
+  "description": "Sistema Unificado SIIPERSU, PRODEP, PROFACAT",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iammayro/Sistema-Coordinacion-Servicios-Academicos.git"
+  },
+  "keywords": [
+    "SIIPERSU",
+    "PRODEP",
+    "PROFACAT"
+  ],
+  "author": "Fernando Mayorga, Carlos Carvajal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iammayro/Sistema-Coordinacion-Servicios-Academicos/issues"
+  },
+  "homepage": "https://github.com/iammayro/Sistema-Coordinacion-Servicios-Academicos#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
