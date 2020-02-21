@@ -1,0 +1,7 @@
+{
+    "autor": "id_usuario",
+    "titulo": "Noticia 1",
+    "descripcion": "Noticia de verdad",
+    "fecha": "2020-12-12",
+    "estado": "visible" // vidible | no visible
+}

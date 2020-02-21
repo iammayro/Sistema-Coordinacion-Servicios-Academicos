@@ -1,0 +1,27 @@
+Trabajador // informacion inmediata necesaria
+
+    Direccion // informacion relacionada a lugar de nacimiento y vivienda actual.
+
+    Oficina // informacion sobre oficina, edificio, telefonos, extensiones, etc.
+
+    Personal // datos personales (foto, nombre, correos, etc)
+
+    Laboral // informacion sobre el desempeño laboral actual (posicion de trabajo, adscripciones, fichas de trabajo)
+
+    Contratos // (academicos, administrativos)
+    
+    Datos_academicos // (titulos escolares)
+
+    Curriculum // informacion del trabajador (historial de posiciones de trabajo, informacion laboral personal)
+
+    planes // descripcion semestral y anual sobre el trabajo del maestro
+
+    evaluacion // evaluacion por año del maestro
+
+Colegios
+
+Academias 
+
+Noticias
+
+Logs

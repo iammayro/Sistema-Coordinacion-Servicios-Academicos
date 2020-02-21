@@ -1,0 +1,291 @@
+{
+    "codigo": "216788996",
+    "nip": "nmkanfdlmasdfasdfsadlffdFDSAFMDDKSADADdasnjAD",
+    "tipo": "maestro", // maestro, coordinador de personal, jefe de departamento
+    "status": "activo",  // jubilado, finado, despedido, renuncia, etc
+    "direccion_nacimiento": {
+        "ciudad": "Barcelona",
+        "estado": "Jalisco",
+        "pais": "España"
+    },
+    "direccion_actual": {
+        "telefono": "3311225566",
+        "ciudad": "Tangamandapio jr",
+        "estado": "Jalisco",
+        "pais": "Mexico",
+        "calle": "Morelos",
+        "colonia": "Jardines Vallarta",
+        "codigo_postal": "45897",
+        "certificado_digitalizado": "aqui_va_un_binario.jpg"
+    },
+    "oficina": {
+        "telefono": "3366998877",
+        "extension": "12345"
+    },
+    "personal": {
+        "acta_nacimiento_digitalizado": "aqui_va_un_binario.jpg",
+        "fecha_nacimiento": "1998-03-24",
+        "nombres": "Fernando Emmanuel",
+        "apellido_paterno": "Carvajal",
+        "apellido_materno": "Rojas",
+        "foto_perfil": "imagen_formato_binario.jpg",
+        "correo": "carlos.mayorga@hotmail.com",
+        "telefono": "3366555889",
+        "genero": "H",       // H, M
+        "estado_civil": "Soltero",
+        "curp": "PENE660720HMCXTN06",
+        "curp_digitalizado": "aqui_va_un_binario.jpg",
+        "imss": "djbhhgywbsas",
+        "imss_digitalizado": "aqui_va_un_binario.jpg",
+        "rfc": "fdsafdsfasdfasdf",
+        "rfc_digitalizado": "aqui_va_un_binario.jpg",
+        "ficha_unica_digitalizado": "aqui_va_un_binario.jpg",
+        "identificacion_digitalizado": "aqui_va_un_binario.jpg",
+    },
+    "laboral": {
+        "puesto": "Maestro",
+        "correo": "manuel.mayorgar@alumnos.udg.mx",
+        "nombramiento": "I Asociado B",
+        "nombramiento_digitalizado": "aqui_va_un_binario.jpg",
+        "curriculum_digitalizado": "aqui_va_un_binario.pdf",
+        "dependencia_adscripcion_academica": 5,   // diccionario de adscripciones
+        "dependencia_adscripcion": 2, // diccionario de adscripciones
+        "dependencia_adscripcion_fisica": 7, // diccionario de adscripciones
+        "contratos_administrativos": [
+            { 
+                "contrato_educacional": "no se que va aqui" ,
+                "contrato_digitalizado": "aqui_va_un_binario.pdf",
+                "temporalidad": "tiempo completo",
+                "fecha_inicio": "2002-03-24",
+                "fecha_fin": null,
+                "turno": "matutino",
+                "carga_horaria": 40,
+                "adscripcion": 23,   // diccionario de adscripciones
+                "status": "activo" // Activo, No Activo
+            },
+            { 
+                "contrato_educacional": "Contrato numeor dos" ,
+                "contrato_digitalizado": "aqui_va_un_binario.pdf",
+                "temporalidad": "tiempo completo",
+                "fecha_inicio": "2002-03-24",
+                "fecha_fin": "2007-03-24",
+                "turno": "vesperino",
+                "carga_horaria": 40,
+                "adscripcion": 23,   // diccionario de adscripciones
+                "status": "activo" // Activo, No Activo
+            }
+        ],
+        "contratos_academicos": [
+            { 
+                "contrato_educacional": "no se que va aqui" ,
+                "contrato_digitalizado": "aqui_va_un_binario.pdf",
+                "temporalidad": "tiempo completo",
+                "fecha_inicio": "2002-03-24",
+                "fecha_fin": null,
+                "turno": "matutino",
+                "carga_horaria": 40,
+                "adscripcion": 23,   // diccionario de adscripciones
+                "status": "activo" // Activo, No Activo
+            }
+        ]
+    }, 
+    "datos_academicos": [
+        {
+            "titulo": "Ingeniero de Software",
+            "titulo_digitalizado": "aqui_va_un_binario.pdf",
+            "fecha_inicio": "1998-03-24",
+            "fecha_fin": "2005-03-24",
+            "universidad": 1, // Diccionario de universidades
+            "grado": "Ingenieria"
+        }
+    ],
+    "curriculum": {
+        "idiomas": [
+            {
+                "idioma": "Español",
+                "habla": 100,
+                "comprension": 100,
+                "lectura": 100,
+                "escritura": 100
+            }, 
+            {
+                "idioma": "Ingles",
+                "habla": 100,
+                "comprension": 100,
+                "lectura": 100,
+                "escritura": 100
+            }
+        ],
+        "programas": [
+            {
+                "programa": "office",
+                "uso": 80
+            },
+            {
+                "programa": "Photoshop",
+                "uso": 90
+            }
+        ],
+        "posiciones_trabajo": [
+            {
+                "posicion": "Jefe de Departamento",
+                "institucion": "UdG",
+                "fecha_inicio": "1998-03-24",
+                "fecha_fin": "1998-03-24"
+            }
+        ],
+        "fichas_bibliograficas": [
+            {
+                "ficha": "Ficha de Investigación uno."
+            }
+        ],
+        "materias_impartidas": [
+            {
+                "materia": "Matematicas",
+                "numero_seccion": 16,
+                "fecha_inicio": "1998-03-24",
+                "fecha_fin": "1998-03-24"
+            }
+        ],
+        "asociaciones_profesionales": [
+            {
+                "asociacion": "Asociacion de Maestros",
+                "tipo_membresia": "Socio",
+                "fecha_inicio": "1998-03-24",
+                "fecha_fin": "1998-03-24"
+            }
+        ],
+        "experiencias_profesionales": [
+            {
+                "posicion": "Jefe",
+                "compania": "INTEL",
+                "fecha_inicio": "1998-03-24",
+                "fecha_fin": "1998-03-24"
+            }
+        ],
+        "premios": [
+            {
+                "premio": "Ganado de Programacion",
+                "fecha": "2016-02-01"
+            }
+        ],
+        "logos": [
+            {
+                "logo": "Ganado de Programacion",
+                "fecha": "2016-02-01"
+            }
+        ],
+        "productos": {
+            "libros": 1,
+            "notas_de_clase": 2,
+            "material_didactico": 3,
+            "manuel_de_practicas": 5,
+            "articulos": 5,
+            "memorias_del_congreso": 6,
+            "patentes": 10,
+            "articulos_de_divulgacion": 9,
+            "participacion_en_foros": 10,
+            "servicios_a_la_industria": 1,
+            "convenios_con_la_industria": 2
+        }
+    },
+    "planes": {
+        "plan_trabajo": [ // Dos al año lo que voy a hacer
+            {
+                "fecha": "2020-10-10",
+                "programa": "Avances Tecnologicos",
+                "materia": "Ingenieria de Software",
+                "formacion_docente": "No se que va qui",
+                "actividades_de_apoyo": "Volar Alto",
+                "numero_de_grupos": 2,
+                "numero_de_linea": 3,
+                "nombre_proyecto": "Proyecto 3",
+                "progreso_del_ano": "Poco",
+                "progreso_del_ano_esperdo": "Mucho",
+                "descripcion_de_actividades": "Son muy interactivas",
+                "tutoria_estudiantil": "No mucho",
+                "ayuda_estudiantil": "Mucga",
+                "formacion_estudiantil": "Texto de prueba",
+                "participacion": "Texto de prueba",
+                "gestion_academica": "Texto de prueba",
+                "gestion_colectiva": "Texto de prueba",
+                "conocimiento_colectivo": "Texto de prueba",
+                "gestion_personal": "Texto de prueba",
+                "difusion": "Texto de prueba",
+                "formacion": "Texto de prueba",
+                "comentarios_adicionales": "Texto de prueba",
+                "docencia_horas": 2,
+                "igac_horas": 4,
+                "asesorias_horas": 5,
+                "tutorias_horas": 5,
+                "gestion_horas": 5,
+                "difusion_horas": 5,
+                "formacion_posgrado_horas": 5,
+                "estado": "no aprobado", // aprobado | no aprobado
+                "historial": [
+                    {
+                        "por": "Juan Pablo segundo",
+                        "fecha": "2020-12-12",
+                        "comentario": "No se aprobo por",
+                        "estado": "no aprobado" // aprobado | no aprobado
+                    }
+                ]
+            }
+        ],
+        "informe": [ // Que que se hizo
+            {
+                "fecha": "2020-10-10",
+                "programa": "Avances Tecnologicos",
+                "materia": "Ingenieria de Software",
+                "formacion_docente": "No se que va qui",
+                "actividades_de_apoyo": "Volar Alto",
+                "numero_de_grupos": 2,
+                "numero_de_linea": 3,
+                "nombre_proyecto": "Proyecto 3",
+                "progreso_del_ano": "Poco",
+                "progreso_del_ano_esperdo": "Mucho",
+                "descripcion_de_actividades": "Son muy interactivas",
+                "tutoria_estudiantil": "No mucho",
+                "ayuda_estudiantil": "Mucga",
+                "formacion_estudiantil": "Texto de prueba",
+                "participacion": "Texto de prueba",
+                "gestion_academica": "Texto de prueba",
+                "gestion_colectiva": "Texto de prueba",
+                "conocimiento_colectivo": "Texto de prueba",
+                "gestion_personal": "Texto de prueba",
+                "difusion": "Texto de prueba",
+                "formacion": "Texto de prueba",
+                "comentarios_adicionales": "Texto de prueba",
+                "docencia_horas": 2,
+                "igac_horas": 4,
+                "asesorias_horas": 5,
+                "tutorias_horas": 5,
+                "gestion_horas": 5,
+                "difusion_horas": 5,
+                "formacion_posgrado_horas": 5,
+                "estado": "no aprobado", // aprobado | no aprobado
+                "historial": [
+                    {
+                        "por": "Juan Pablo segundo",
+                        "fecha": "2020-12-12",
+                        "comentario": "No se aprobo por",
+                        "estado": "no aprobado" // aprobado | no aprobado
+                    }
+                ]
+            }
+        ]
+    },
+    "evaluacion": [
+        {
+            "fecha": "2019-10-10",
+            "asistencia": 2,
+            "usos_de_ayuda": 3,
+            "cursos_completos": 4,
+            "aprobaciones_de_estudiantes": 1,
+            "asistencia_estudiantil": 3,
+            "ayuda_de_tesis": 4,
+            "ayuda_de_titulacion": 4,
+            "comentario": "Muy bueno en general"
+        }
+    ]
+}
