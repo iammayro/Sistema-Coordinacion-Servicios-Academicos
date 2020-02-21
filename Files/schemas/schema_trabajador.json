@@ -2,7 +2,7 @@
     "codigo": "216788996",
     "nip": "nmkanfdlmasdfasdfsadlffdFDSAFMDDKSADADdasnjAD",
     "tipo": "maestro", // maestro, coordinador de personal, jefe de departamento
-    "status": "activo",  // jubilado, finado, despedido, renuncia, etc
+    "status": "activo",  // jubilado, finado, despedido, renuncia
     "direccion_nacimiento": {
         "ciudad": "Barcelona",
         "estado": "Jalisco",
@@ -16,14 +16,14 @@
         "calle": "Morelos",
         "colonia": "Jardines Vallarta",
         "codigo_postal": "45897",
-        "certificado_digitalizado": "aqui_va_un_binario.jpg"
+        "certificado_digitalizado": {"data": "Buffer", "contentType": "String"}
     },
     "oficina": {
         "telefono": "3366998877",
         "extension": "12345"
     },
     "personal": {
-        "acta_nacimiento_digitalizado": "aqui_va_un_binario.jpg",
+        "acta_nacimiento_digitalizado": {"data": "Buffer", "contentType": "String"},
         "fecha_nacimiento": "1998-03-24",
         "nombres": "Fernando Emmanuel",
         "apellido_paterno": "Carvajal",
@@ -34,27 +34,27 @@
         "genero": "H",       // H, M
         "estado_civil": "Soltero",
         "curp": "PENE660720HMCXTN06",
-        "curp_digitalizado": "aqui_va_un_binario.jpg",
+        "curp_digitalizado": {"data": "Buffer", "contentType": "String"},
         "imss": "djbhhgywbsas",
-        "imss_digitalizado": "aqui_va_un_binario.jpg",
+        "imss_digitalizado": {"data": "Buffer", "contentType": "String"},
         "rfc": "fdsafdsfasdfasdf",
-        "rfc_digitalizado": "aqui_va_un_binario.jpg",
-        "ficha_unica_digitalizado": "aqui_va_un_binario.jpg",
-        "identificacion_digitalizado": "aqui_va_un_binario.jpg",
+        "rfc_digitalizado": {"data": "Buffer", "contentType": "String"},
+        "ficha_unica_digitalizado": {"data": "Buffer", "contentType": "String"},
+        "identificacion_digitalizado": {"data": "Buffer", "contentType": "String"},
     },
     "laboral": {
         "puesto": "Maestro",
         "correo": "manuel.mayorgar@alumnos.udg.mx",
         "nombramiento": "I Asociado B",
-        "nombramiento_digitalizado": "aqui_va_un_binario.jpg",
-        "curriculum_digitalizado": "aqui_va_un_binario.pdf",
+        "nombramiento_digitalizado": {"data": "Buffer", "contentType": "String"},
+        "curriculum_digitalizado": {"data": "Buffer", "contentType": "String"},
         "dependencia_adscripcion_academica": 5,   // diccionario de adscripciones
         "dependencia_adscripcion": 2, // diccionario de adscripciones
         "dependencia_adscripcion_fisica": 7, // diccionario de adscripciones
         "contratos_administrativos": [
             { 
                 "contrato_educacional": "no se que va aqui" ,
-                "contrato_digitalizado": "aqui_va_un_binario.pdf",
+                "contrato_digitalizado": {"data": "Buffer", "contentType": "String"},
                 "temporalidad": "tiempo completo",
                 "fecha_inicio": "2002-03-24",
                 "fecha_fin": null,
@@ -65,7 +65,7 @@
             },
             { 
                 "contrato_educacional": "Contrato numeor dos" ,
-                "contrato_digitalizado": "aqui_va_un_binario.pdf",
+                "contrato_digitalizado": {"data": "Buffer", "contentType": "String"},
                 "temporalidad": "tiempo completo",
                 "fecha_inicio": "2002-03-24",
                 "fecha_fin": "2007-03-24",
@@ -78,7 +78,7 @@
         "contratos_academicos": [
             { 
                 "contrato_educacional": "no se que va aqui" ,
-                "contrato_digitalizado": "aqui_va_un_binario.pdf",
+                "contrato_digitalizado": {"data": "Buffer", "contentType": "String"},
                 "temporalidad": "tiempo completo",
                 "fecha_inicio": "2002-03-24",
                 "fecha_fin": null,
@@ -92,7 +92,7 @@
     "datos_academicos": [
         {
             "titulo": "Ingeniero de Software",
-            "titulo_digitalizado": "aqui_va_un_binario.pdf",
+            "titulo_digitalizado": {"data": "Buffer", "contentType": "String"},
             "fecha_inicio": "1998-03-24",
             "fecha_fin": "2005-03-24",
             "universidad": 1, // Diccionario de universidades
