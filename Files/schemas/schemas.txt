@@ -20,7 +20,11 @@ Trabajador // informacion inmediata necesaria
 
 Colegios
 
+Cursos
+
 Academias 
+
+Departamentos // lo mismo que las adscripciones
 
 Noticias
 

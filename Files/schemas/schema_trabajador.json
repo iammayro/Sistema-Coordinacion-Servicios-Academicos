@@ -48,9 +48,9 @@
         "nombramiento": "I Asociado B",
         "nombramiento_digitalizado": {"data": "Buffer", "contentType": "String"},
         "curriculum_digitalizado": {"data": "Buffer", "contentType": "String"},
-        "dependencia_adscripcion_academica": 5,   // diccionario de adscripciones
-        "dependencia_adscripcion": 2, // diccionario de adscripciones
-        "dependencia_adscripcion_fisica": 7, // diccionario de adscripciones
+        "dependencia_adscripcion_academica": "ObjectId('jsanfkdfnaskdlf')",   // diccionario de adscripciones
+        "dependencia_adscripcion": "ObjectId('jsanfkdfnaskdlf')", // diccionario de adscripciones
+        "dependencia_adscripcion_fisica": "ObjectId('jsanfkdfnaskdlf')", // diccionario de adscripciones
         "contratos_administrativos": [
             { 
                 "contrato_educacional": "no se que va aqui" ,
@@ -60,7 +60,7 @@
                 "fecha_fin": null,
                 "turno": "matutino",
                 "carga_horaria": 40,
-                "adscripcion": 23,   // diccionario de adscripciones
+                "adscripcion": "ObjectId('jsanfkdfnaskdlf')",   // diccionario de adscripciones
                 "status": "activo" // Activo, No Activo
             },
             { 
@@ -71,7 +71,7 @@
                 "fecha_fin": "2007-03-24",
                 "turno": "vesperino",
                 "carga_horaria": 40,
-                "adscripcion": 23,   // diccionario de adscripciones
+                "adscripcion": "ObjectId('jsanfkdfnaskdlf')",   // diccionario de adscripciones
                 "status": "activo" // Activo, No Activo
             }
         ],
@@ -84,7 +84,7 @@
                 "fecha_fin": null,
                 "turno": "matutino",
                 "carga_horaria": 40,
-                "adscripcion": 23,   // diccionario de adscripciones
+                "adscripcion": "ObjectId('jsanfkdfnaskdlf')",   // diccionario de adscripciones
                 "status": "activo" // Activo, No Activo
             }
         ]
@@ -95,7 +95,7 @@
             "titulo_digitalizado": {"data": "Buffer", "contentType": "String"},
             "fecha_inicio": "1998-03-24",
             "fecha_fin": "2005-03-24",
-            "universidad": 1, // Diccionario de universidades
+            "universidad": "ObjectId('jsanfkdfnaskdlf')", // Diccionario de universidades
             "grado": "Ingenieria"
         }
     ],
@@ -286,6 +286,12 @@
             "ayuda_de_tesis": 4,
             "ayuda_de_titulacion": 4,
             "comentario": "Muy bueno en general"
+        }
+    ],
+    "cursos": [
+        {
+            "curso": "ObjectId('jsanfkdfnaskdlf')", // referencia al schema cursos
+            "fecha_terminado": "2002-03-24"
         }
     ]
 }

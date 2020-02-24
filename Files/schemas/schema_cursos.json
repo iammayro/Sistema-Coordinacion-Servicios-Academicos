@@ -1,0 +1,14 @@
+{
+    "nrc": "156154",
+    "nombre": "Curso de japones otako",
+    "fecha_creacion": "2002-03-24",
+    "fecha_curso": "2002-03-24",
+    "centro_universitario": "CUCEI",
+    "edificio": "X",
+    "instructor": "Fernando",
+    "modalidad": "obligatirio", // u opcional
+    "horas_duracion": 15,
+    "horas_precenciales": 10,
+    "horas_independientes": 5
+
+}
