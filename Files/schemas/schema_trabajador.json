@@ -293,5 +293,14 @@
             "curso": "ObjectId('jsanfkdfnaskdlf')", // referencia al schema cursos
             "fecha_terminado": "2002-03-24"
         }
+    ],
+    "prodep": [
+        {
+            "fecha_recibido": "2018-01-02",
+            "duracion_anios": 3,
+            "dictamen_digitalizado": {"data": "Buffer", "contentType": "String"},
+            "expediente_digitalizado": {"data": "Buffer", "contentType": "String"},
+            "monto_economico": 40000
+        }
     ]
 }

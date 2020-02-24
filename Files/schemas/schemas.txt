@@ -18,6 +18,8 @@ Trabajador // informacion inmediata necesaria
 
     evaluacion // evaluacion por año del maestro
 
+    prodep // Perifil de profed
+
 Colegios
 
 Cursos
@@ -25,6 +27,8 @@ Cursos
 Academias 
 
 Departamentos // lo mismo que las adscripciones
+
+Cuerpo academico
 
 Noticias
 
