@@ -9,6 +9,10 @@
     "modalidad": "obligatirio", // u opcional
     "horas_duracion": 15,
     "horas_precenciales": 10,
-    "horas_independientes": 5
-
+    "horas_independientes": 5,
+    "integrantes": [
+        {
+            "integrante": "Obj('Usiadjioj3874243')"
+        }
+    ]
 }
