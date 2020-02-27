@@ -1,15 +1,16 @@
 {
-    "nrc": "156154",
     "nombre": "Curso de japones otako",
     "fecha_creacion": "2002-03-24",
     "fecha_curso": "2002-03-24",
     "centro_universitario": "CUCEI",
     "edificio": "X",
+    "aula": "Laboratoria B",
     "instructor": "Fernando",
-    "modalidad": "obligatirio", // u opcional
+    "modalidad": "obligatirio", // obligatorio | opcional
     "horas_duracion": 15,
     "horas_precenciales": 10,
     "horas_independientes": 5,
+    "comentario": "Si el salon esta cerrado ir al de a lado",
     "integrantes": [
         {
             "integrante": "Obj('Usiadjioj3874243')"

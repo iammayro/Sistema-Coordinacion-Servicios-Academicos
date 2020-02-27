@@ -1,6 +1,6 @@
 {
     "codigo": "216788996",
-    "nip": "nmkanfdlmasdfasdfsadlffdFDSAFMDDKSADADdasnjAD",
+    "nip": "nmkanfdlmasdfasdfsadlffdFDSAFMDDKSADADdasnjAD", // Encriptado
     "tipo": "maestro", // maestro, coordinador de personal, jefe de departamento
     "status": "activo",  // jubilado, finado, despedido, renuncia
     "direccion_nacimiento": {
@@ -23,21 +23,21 @@
         "extension": "12345"
     },
     "personal": {
-        "acta_nacimiento_digitalizado": {"data": "Buffer", "contentType": "String"},
-        "fecha_nacimiento": "1998-03-24",
         "nombres": "Fernando Emmanuel",
         "apellido_paterno": "Carvajal",
         "apellido_materno": "Rojas",
-        "foto_perfil": "imagen_formato_binario.jpg",
         "correo": "carlos.mayorga@hotmail.com",
         "telefono": "3366555889",
         "genero": "H",       // H, M
         "estado_civil": "Soltero",
+        "fecha_nacimiento": "1998-03-24",
         "curp": "PENE660720HMCXTN06",
-        "curp_digitalizado": {"data": "Buffer", "contentType": "String"},
         "imss": "djbhhgywbsas",
-        "imss_digitalizado": {"data": "Buffer", "contentType": "String"},
         "rfc": "fdsafdsfasdfasdf",
+        "foto_perfil": {"data": "Buffer", "contentType": "String"},
+        "curp_digitalizado": {"data": "Buffer", "contentType": "String"},
+        "imss_digitalizado": {"data": "Buffer", "contentType": "String"},
+        "acta_nacimiento_digitalizado": {"data": "Buffer", "contentType": "String"},
         "rfc_digitalizado": {"data": "Buffer", "contentType": "String"},
         "ficha_unica_digitalizado": {"data": "Buffer", "contentType": "String"},
         "identificacion_digitalizado": {"data": "Buffer", "contentType": "String"},
@@ -53,7 +53,7 @@
         "dependencia_adscripcion_fisica": "ObjectId('jsanfkdfnaskdlf')", // diccionario de adscripciones
         "contratos_administrativos": [
             { 
-                "contrato_educacional": "no se que va aqui" ,
+                "nombre": "no se que va aqui" ,
                 "contrato_digitalizado": {"data": "Buffer", "contentType": "String"},
                 "temporalidad": "tiempo completo",
                 "fecha_inicio": "2002-03-24",
@@ -61,23 +61,12 @@
                 "turno": "matutino",
                 "carga_horaria": 40,
                 "adscripcion": "ObjectId('jsanfkdfnaskdlf')",   // diccionario de adscripciones
-                "status": "activo" // Activo, No Activo
-            },
-            { 
-                "contrato_educacional": "Contrato numeor dos" ,
-                "contrato_digitalizado": {"data": "Buffer", "contentType": "String"},
-                "temporalidad": "tiempo completo",
-                "fecha_inicio": "2002-03-24",
-                "fecha_fin": "2007-03-24",
-                "turno": "vesperino",
-                "carga_horaria": 40,
-                "adscripcion": "ObjectId('jsanfkdfnaskdlf')",   // diccionario de adscripciones
-                "status": "activo" // Activo, No Activo
+                "status": "activo" // activo | no activo
             }
         ],
         "contratos_academicos": [
             { 
-                "contrato_educacional": "no se que va aqui" ,
+                "nombre": "no se que va aqui" ,
                 "contrato_digitalizado": {"data": "Buffer", "contentType": "String"},
                 "temporalidad": "tiempo completo",
                 "fecha_inicio": "2002-03-24",
@@ -85,17 +74,24 @@
                 "turno": "matutino",
                 "carga_horaria": 40,
                 "adscripcion": "ObjectId('jsanfkdfnaskdlf')",   // diccionario de adscripciones
-                "status": "activo" // Activo, No Activo
+                "status": "activo" // activo | no activo
             }
         ]
     }, 
+    "notificaciones": [
+        {
+            "mensaje": "Ya casi llega navidad",
+            "fecha_envio": "2002-03-24",
+            "visto": false
+        }
+    ],
     "datos_academicos": [
         {
             "titulo": "Ingeniero de Software",
             "titulo_digitalizado": {"data": "Buffer", "contentType": "String"},
             "fecha_inicio": "1998-03-24",
             "fecha_fin": "2005-03-24",
-            "universidad": "ObjectId('jsanfkdfnaskdlf')", // Diccionario de universidades
+            "universidad": "Universidad de Guadalajara",
             "grado": "Ingenieria"
         }
     ],
@@ -107,23 +103,12 @@
                 "comprension": 100,
                 "lectura": 100,
                 "escritura": 100
-            }, 
-            {
-                "idioma": "Ingles",
-                "habla": 100,
-                "comprension": 100,
-                "lectura": 100,
-                "escritura": 100
             }
         ],
         "programas": [
             {
                 "programa": "office",
                 "uso": 80
-            },
-            {
-                "programa": "Photoshop",
-                "uso": 90
             }
         ],
         "posiciones_trabajo": [
@@ -169,7 +154,7 @@
                 "fecha": "2016-02-01"
             }
         ],
-        "logos": [
+        "logros": [
             {
                 "logo": "Ganado de Programacion",
                 "fecha": "2016-02-01"
@@ -179,7 +164,7 @@
             "libros": 1,
             "notas_de_clase": 2,
             "material_didactico": 3,
-            "manuel_de_practicas": 5,
+            "manual_de_practicas": 5,
             "articulos": 5,
             "memorias_del_congreso": 6,
             "patentes": 10,
@@ -192,16 +177,17 @@
     "planes": {
         "plan_trabajo": [ // Dos al año lo que voy a hacer
             {
+                "calendario": "A",
                 "fecha": "2020-10-10",
                 "programa": "Avances Tecnologicos",
                 "materia": "Ingenieria de Software",
                 "formacion_docente": "No se que va qui",
                 "actividades_de_apoyo": "Volar Alto",
                 "numero_de_grupos": 2,
-                "numero_de_linea": 3,
+                "nombre_de_linea": "Inovación en Tec",
                 "nombre_proyecto": "Proyecto 3",
-                "progreso_del_ano": "Poco",
-                "progreso_del_ano_esperdo": "Mucho",
+                "progreso_del_ano": 60, // %
+                "progreso_del_ano_esperdo": 80, // %
                 "descripcion_de_actividades": "Son muy interactivas",
                 "tutoria_estudiantil": "No mucho",
                 "ayuda_estudiantil": "Mucga",
@@ -215,24 +201,24 @@
                 "formacion": "Texto de prueba",
                 "comentarios_adicionales": "Texto de prueba",
                 "docencia_horas": 2,
-                "igac_horas": 4,
+                "lgac_horas": 4,
                 "asesorias_horas": 5,
                 "tutorias_horas": 5,
                 "gestion_horas": 5,
                 "difusion_horas": 5,
                 "formacion_posgrado_horas": 5,
-                "estado": "no aprobado", // aprobado | no aprobado
+                "estado": "no aprobado", // aprobado | no aprobado | en espera
                 "historial": [
                     {
                         "por": "Juan Pablo segundo",
                         "fecha": "2020-12-12",
                         "comentario": "No se aprobo por",
-                        "estado": "no aprobado" // aprobado | no aprobado
+                        "estado": "no aprobado" // aprobado | no aprobado | en espera
                     }
                 ]
             }
         ],
-        "informe": [ // Que que se hizo
+        "informe": [ // Que que se hizo en el año
             {
                 "fecha": "2020-10-10",
                 "programa": "Avances Tecnologicos",
@@ -240,10 +226,10 @@
                 "formacion_docente": "No se que va qui",
                 "actividades_de_apoyo": "Volar Alto",
                 "numero_de_grupos": 2,
-                "numero_de_linea": 3,
+                "nombre_de_linea": "Inovación en Tec",
                 "nombre_proyecto": "Proyecto 3",
-                "progreso_del_ano": "Poco",
-                "progreso_del_ano_esperdo": "Mucho",
+                "progreso_del_ano": 60, // %
+                "progreso_del_ano_esperdo": 80, // %
                 "descripcion_de_actividades": "Son muy interactivas",
                 "tutoria_estudiantil": "No mucho",
                 "ayuda_estudiantil": "Mucga",
@@ -257,41 +243,30 @@
                 "formacion": "Texto de prueba",
                 "comentarios_adicionales": "Texto de prueba",
                 "docencia_horas": 2,
-                "igac_horas": 4,
+                "lgac_horas": 4,
                 "asesorias_horas": 5,
                 "tutorias_horas": 5,
                 "gestion_horas": 5,
                 "difusion_horas": 5,
                 "formacion_posgrado_horas": 5,
-                "estado": "no aprobado", // aprobado | no aprobado
+                "estado": "no aprobado", // aprobado | no aprobado | en espera
                 "historial": [
                     {
                         "por": "Juan Pablo segundo",
                         "fecha": "2020-12-12",
                         "comentario": "No se aprobo por",
-                        "estado": "no aprobado" // aprobado | no aprobado
+                        "estado": "no aprobado" // aprobado | no aprobado | en espera
                     }
                 ]
             }
         ]
     },
-    "evaluacion": [
-        {
-            "fecha": "2019-10-10",
-            "asistencia": 2,
-            "usos_de_ayuda": 3,
-            "cursos_completos": 4,
-            "aprobaciones_de_estudiantes": 1,
-            "asistencia_estudiantil": 3,
-            "ayuda_de_tesis": 4,
-            "ayuda_de_titulacion": 4,
-            "comentario": "Muy bueno en general"
-        }
-    ],
     "cursos": [
         {
             "curso": "ObjectId('jsanfkdfnaskdlf')", // referencia al schema cursos
-            "fecha_terminado": "2002-03-24"
+            "fecha_terminado": "2002-03-24",
+            "acreditado": true,
+            "constancia_digitalizada": {"data": "Buffer", "contentType": "String"}
         }
     ],
     "prodep": [

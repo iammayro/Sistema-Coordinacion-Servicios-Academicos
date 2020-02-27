@@ -2,18 +2,14 @@
     "clave": "UDG-2345",
     "anio_creacion": "1997-02-03",
     "duracion_anios": 3,
-    "nivel": "en formación", // EN formcion, en consolidacion, y consolidado
+    "nivel": "en formación", // en formcion | en consolidacion | consolidado
     "nombre": "Rologia",
     "dictamen_digitalizado": {"data": "Buffer", "contentType": "String"},
     "expediente_digitalizado": {"data": "Buffer", "contentType": "String"},
     "integrantes": [
         {
             "integrante": "Obj('324u324kjasdf834')", // Referencia a trabajador
-            "tipo": "Representante"
-        },
-        {
-            "integrante": "Obj('89f8ds9fhsa8ddfs')", // Referencia a trabajador
-            "tipo": "Integrante"
+            "tipo": "Representante" // representante | integrante | colaborador
         }
     ]
 }
