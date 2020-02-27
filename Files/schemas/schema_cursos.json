@@ -11,6 +11,7 @@
     "horas_precenciales": 10,
     "horas_independientes": 5,
     "comentario": "Si el salon esta cerrado ir al de a lado",
+    "finalizado": false,
     "integrantes": [
         {
             "integrante": "Obj('Usiadjioj3874243')"
