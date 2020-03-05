@@ -25,7 +25,7 @@ var TrabajadorSchema = new mongoose.Schema({
     },
     oficina: {
         telefono: {type: String},
-        extension: {type: String},
+        extension: {type: String}
     },
     personal: {
         nombres: {type: String},
@@ -95,7 +95,7 @@ var TrabajadorSchema = new mongoose.Schema({
                 fecha_fin: {type: String},
                 turno: {type: String},
                 carga_horaria: {type: Number},
-                adscripcion: {type: ObjectId},
+                adscripcion: {type: mongoose.ObjectId},
                 status: {type: String}
             }
         ],
@@ -111,10 +111,10 @@ var TrabajadorSchema = new mongoose.Schema({
                 fecha_fin: {type: String},
                 turno: {type: String},
                 carga_horaria: {type: Number},
-                adscripcion: {type: ObjectId},
+                adscripcion: {type: mongoose.ObjectId},
                 status: {type: String}
             }
-        ],
+        ]
     },
     notificaciones: [
         {
@@ -192,7 +192,7 @@ var TrabajadorSchema = new mongoose.Schema({
         premios: [
             {
                 premio: {type: String},
-                fecha: {type: String},
+                fecha: {type: String}
             }
         ],
         logros: [
@@ -254,7 +254,7 @@ var TrabajadorSchema = new mongoose.Schema({
                         por: {type: String},
                         fecha: {type: String},
                         comentario: {type: String},
-                        estado: {type: String},
+                        estado: {type: String}
                     }
                 ]
             }
@@ -297,7 +297,7 @@ var TrabajadorSchema = new mongoose.Schema({
                         por: {type: String},
                         fecha: {type: String},
                         comentario: {type: String},
-                        estado: {type: String},
+                        estado: {type: String}
                     }
                 ]
             }
@@ -305,13 +305,13 @@ var TrabajadorSchema = new mongoose.Schema({
     },
     cursos: [
         {
-            curso: {type: ObjectId},
+            curso: {type: mongoose.ObjectId},
             fecha_terminado: {type: String},
             acreditado: {type: Boolean},
             constancia_digitalizada: {
                 archivo: {type: Buffer},
                 extension_archivo: {type: String}
-            },
+            }
         }
     ],
     prodep: [
