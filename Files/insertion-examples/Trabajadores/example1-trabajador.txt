@@ -1,0 +1,281 @@
+db.trabajadores.insert({
+    "codigo": "216788996",
+    "nip": "nmkanfdlmasdfasdfsadlffdFDSAFMDDKSADADdasnjAD",
+    "tipo": "maestro",
+    "status": "activo",
+    "direccion_nacimiento": {
+        "ciudad": "Barcelona",
+        "estado": "Jalisco",
+        "pais": "España"
+    },
+    "direccion_actual": {
+        "telefono": "3311225566",
+        "ciudad": "Tangamandapio jr",
+        "estado": "Jalisco",
+        "pais": "Mexico",
+        "calle": "Morelos",
+        "colonia": "Jardines Vallarta",
+        "codigo_postal": "45897",
+        "certificado_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"}
+    },
+    "oficina": {
+        "telefono": "3366998877",
+        "extension": "12345"
+    },
+    "personal": {
+        "nombres": "Fernando Emmanuel",
+        "apellido_paterno": "Carvajal",
+        "apellido_materno": "Rojas",
+        "correo": "carlos.mayorga@hotmail.com",
+        "telefono": "3366555889",
+        "genero": "H",
+        "estado_civil": "Soltero",
+        "fecha_nacimiento": "1998-03-24",
+        "curp": "PENE660720HMCXTN06",
+        "imss": "djbhhgywbsas",
+        "rfc": "fdsafdsfasdfasdf",
+        "foto_perfil": {"archivo": "Buffer", "extension_archivo": "String"},
+        "curp_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+        "imss_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+        "acta_nacimiento_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+        "rfc_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+        "ficha_unica_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+        "identificacion_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+    },
+    "laboral": {
+        "puesto": "Maestro",
+        "correo": "manuel.mayorgar@alumnos.udg.mx",
+        "nombramiento": "I Asociado B",
+        "nombramiento_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+        "curriculum_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+        "dependencia_adscripcion_academica": "ObjectId('jsanfkdfnaskdlf')",
+        "dependencia_adscripcion": "ObjectId('jsanfkdfnaskdlf')",
+        "dependencia_adscripcion_fisica": "ObjectId('jsanfkdfnaskdlf')",
+        "contratos_administrativos": [
+            { 
+                "nombre": "no se que va aqui" ,
+                "contrato_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+                "temporalidad": "tiempo completo",
+                "fecha_inicio": "2002-03-24",
+                "fecha_fin": null,
+                "turno": "matutino",
+                "carga_horaria": 40,
+                "adscripcion": "ObjectId('jsanfkdfnaskdlf')",
+                "status": "activo"
+            }
+        ],
+        "contratos_academicos": [
+            { 
+                "nombre": "no se que va aqui" ,
+                "contrato_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+                "temporalidad": "tiempo completo",
+                "fecha_inicio": "2002-03-24",
+                "fecha_fin": null,
+                "turno": "matutino",
+                "carga_horaria": 40,
+                "adscripcion": "ObjectId('jsanfkdfnaskdlf')",
+                "status": "activo"
+            }
+        ]
+    }, 
+    "notificaciones": [
+        {
+            "mensaje": "Ya casi llega navidad",
+            "fecha_envio": "2002-03-24",
+            "visto": false
+        }
+    ],
+    "datos_academicos": [
+        {
+            "titulo": "Ingeniero de Software",
+            "titulo_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+            "fecha_inicio": "1998-03-24",
+            "fecha_fin": "2005-03-24",
+            "universidad": "Universidad de Guadalajara",
+            "grado": "Ingenieria"
+        }
+    ],
+    "curriculum": {
+        "idiomas": [
+            {
+                "idioma": "Español",
+                "habla": 100,
+                "comprension": 100,
+                "lectura": 100,
+                "escritura": 100
+            }
+        ],
+        "programas": [
+            {
+                "programa": "office",
+                "uso": 80
+            }
+        ],
+        "posiciones_trabajo": [
+            {
+                "posicion": "Jefe de Departamento",
+                "institucion": "UdG",
+                "fecha_inicio": "1998-03-24",
+                "fecha_fin": "1998-03-24"
+            }
+        ],
+        "fichas_bibliograficas": [
+            {
+                "ficha": "Ficha de Investigación uno."
+            }
+        ],
+        "materias_impartidas": [
+            {
+                "materia": "Matematicas",
+                "numero_seccion": 16,
+                "fecha_inicio": "1998-03-24",
+                "fecha_fin": "1998-03-24"
+            }
+        ],
+        "asociaciones_profesionales": [
+            {
+                "asociacion": "Asociacion de Maestros",
+                "tipo_membresia": "Socio",
+                "fecha_inicio": "1998-03-24",
+                "fecha_fin": "1998-03-24"
+            }
+        ],
+        "experiencias_profesionales": [
+            {
+                "posicion": "Jefe",
+                "compania": "INTEL",
+                "fecha_inicio": "1998-03-24",
+                "fecha_fin": "1998-03-24"
+            }
+        ],
+        "premios": [
+            {
+                "premio": "Ganado de Programacion",
+                "fecha": "2016-02-01"
+            }
+        ],
+        "logros": [
+            {
+                "logo": "Ganado de Programacion",
+                "fecha": "2016-02-01"
+            }
+        ],
+        "productos": {
+            "libros": 1,
+            "notas_de_clase": 2,
+            "material_didactico": 3,
+            "manual_de_practicas": 5,
+            "articulos": 5,
+            "memorias_del_congreso": 6,
+            "patentes": 10,
+            "articulos_de_divulgacion": 9,
+            "participacion_en_foros": 10,
+            "servicios_a_la_industria": 1,
+            "convenios_con_la_industria": 2
+        }
+    },
+    "planes": {
+        "plan_trabajo": [
+            {
+                "calendario": "A",
+                "fecha": "2020-10-10",
+                "programa": "Avances Tecnologicos",
+                "materia": "Ingenieria de Software",
+                "formacion_docente": "No se que va qui",
+                "actividades_de_apoyo": "Volar Alto",
+                "numero_de_grupos": 2,
+                "nombre_de_linea": "Inovación en Tec",
+                "nombre_proyecto": "Proyecto 3",
+                "progreso_del_ano": 60,
+                "progreso_del_ano_esperdo": 80,
+                "descripcion_de_actividades": "Son muy interactivas",
+                "tutoria_estudiantil": "No mucho",
+                "ayuda_estudiantil": "Mucga",
+                "formacion_estudiantil": "Texto de prueba",
+                "participacion": "Texto de prueba",
+                "gestion_academica": "Texto de prueba",
+                "gestion_colectiva": "Texto de prueba",
+                "conocimiento_colectivo": "Texto de prueba",
+                "gestion_personal": "Texto de prueba",
+                "difusion": "Texto de prueba",
+                "formacion": "Texto de prueba",
+                "comentarios_adicionales": "Texto de prueba",
+                "docencia_horas": 2,
+                "lgac_horas": 4,
+                "asesorias_horas": 5,
+                "tutorias_horas": 5,
+                "gestion_horas": 5,
+                "difusion_horas": 5,
+                "formacion_posgrado_horas": 5,
+                "estado": "no aprobado",
+                "historial": [
+                    {
+                        "por": "Juan Pablo segundo",
+                        "fecha": "2020-12-12",
+                        "comentario": "No se aprobo por",
+                        "estado": "no aprobado"
+                    }
+                ]
+            }
+        ],
+        "informe": [
+            {
+                "fecha": "2020-10-10",
+                "programa": "Avances Tecnologicos",
+                "materia": "Ingenieria de Software",
+                "formacion_docente": "No se que va qui",
+                "actividades_de_apoyo": "Volar Alto",
+                "numero_de_grupos": 2,
+                "nombre_de_linea": "Inovación en Tec",
+                "nombre_proyecto": "Proyecto 3",
+                "progreso_del_ano": 60,
+                "progreso_del_ano_esperdo": 80,
+                "descripcion_de_actividades": "Son muy interactivas",
+                "tutoria_estudiantil": "No mucho",
+                "ayuda_estudiantil": "Mucga",
+                "formacion_estudiantil": "Texto de prueba",
+                "participacion": "Texto de prueba",
+                "gestion_academica": "Texto de prueba",
+                "gestion_colectiva": "Texto de prueba",
+                "conocimiento_colectivo": "Texto de prueba",
+                "gestion_personal": "Texto de prueba",
+                "difusion": "Texto de prueba",
+                "formacion": "Texto de prueba",
+                "comentarios_adicionales": "Texto de prueba",
+                "docencia_horas": 2,
+                "lgac_horas": 4,
+                "asesorias_horas": 5,
+                "tutorias_horas": 5,
+                "gestion_horas": 5,
+                "difusion_horas": 5,
+                "formacion_posgrado_horas": 5,
+                "estado": "no aprobado",
+                "historial": [
+                    {
+                        "por": "Juan Pablo segundo",
+                        "fecha": "2020-12-12",
+                        "comentario": "No se aprobo por",
+                        "estado": "no aprobado"
+                    }
+                ]
+            }
+        ]
+    },
+    "cursos": [
+        {
+            "curso": "ObjectId('jsanfkdfnaskdlf')",
+            "fecha_terminado": "2002-03-24",
+            "acreditado": true,
+            "constancia_digitalizada": {"archivo": "Buffer", "extension_archivo": "String"}
+        }
+    ],
+    "prodep": [
+        {
+            "fecha_recibido": "2018-01-02",
+            "duracion_anios": 3,
+            "dictamen_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+            "expediente_digitalizado": {"archivo": "Buffer", "extension_archivo": "String"},
+            "monto_economico": 40000
+        }
+    ]
+})

@@ -8,3 +8,12 @@ module.exports.hola = async (req, res) => {
         res.json({ok: false, error});
     }
 }
+
+module.exports.getTrabajadores = async (req, res) => {
+    try {
+        const resp = await Trabajador.find();
+        res.json({ok: true, resp});
+    } catch (error) {
+        res.json({ok: false, error});
+    }
+}

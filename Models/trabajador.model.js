@@ -331,4 +331,4 @@ var TrabajadorSchema = new mongoose.Schema({
     ]
 });
 
-module.exports = mongoose.model('Trabajador', TrabajadorSchema);
+module.exports = mongoose.model('trabajadores', TrabajadorSchema);
