@@ -1,0 +1,4 @@
+Aqui el programa guarda todos los archivos que se suben
+
+**Cuerpos Academicos
+El programa creara una carpeta que separara los expedientes y dictamenes por clave
