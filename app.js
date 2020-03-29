@@ -7,7 +7,7 @@ const app = express();
 require('dotenv').config();
 
 // Conectar a mongoose
-mongoose.connect('mongodb://localhost:27017/CSA', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/CSA', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 
 // Rutas divididas en modulos
 app.use('/', require('./Routes/siipersu.routes'));
+app.use('/', require('./Routes/CA.routes'));
 
 // Correr el puerto
 app.listen(process.env.PORT, function() {
