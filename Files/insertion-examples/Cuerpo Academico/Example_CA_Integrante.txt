@@ -1,0 +1,4 @@
+{
+	"codigo": "21567853", //Esto esta ligado al schema de trabajador
+	"tipo": "Colaborador"
+}

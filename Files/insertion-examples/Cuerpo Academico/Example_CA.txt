@@ -1,0 +1,7 @@
+{
+	"clave": "CA_159",
+	"anio_creacion": "17/03/2020",
+	"duracion": 6, //3 o 6
+	"nivel": "Consolidado", 
+	"nombre": "Reologia"
+}
