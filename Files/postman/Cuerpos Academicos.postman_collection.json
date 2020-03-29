@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "4d34b24d-34a7-443d-9f2c-b059fd645fdb",
+		"name": "Cuerpos Academicos",
+		"description": "Todos los request de Cuerpos Academicos, incluyendo insercion de Nuevos Cuerpos Academicos e Integrantes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ver Cuerpos Academicos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ca",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca"
+					]
+				},
+				"description": "Devuelve todos los Cuerpos Academicos"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuerpo Academico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clave\": \"CA_159\",\n\t\"anio_creacion\": \"17/03/2020\",\n\t\"duracion\": 6,\n\t\"nivel\": \"Consolidado\",\n\t\"nombre\": \"Tecnologias\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/ca",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Cuerpo Academico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clave\": \"CA_165\",\n\t\"anio_creacion\": \"09/03/2020\",\n\t\"duracion\": 3,\n\t\"nivel\": \"En Foramcion\",\n\t\"nombre\": \"Desarrollo X\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/ca/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca",
+						":id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_159"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver un Cuerpo Academico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ca/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_155"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subir expediente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "expediente",
+							"type": "file",
+							"src": "/C:/Users/emman/Documents/expediente.pdf"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/ca/:id/expediente",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca",
+						":id",
+						"expediente"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_154"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar expediente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "expediente",
+							"type": "file",
+							"src": "/C:/Users/emman/Documents/expediente.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/ca/:id/expediente",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca",
+						":id",
+						"expediente"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_155"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subir Dictamen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "dictamen",
+							"type": "file",
+							"src": "/C:/Users/emman/Documents/2020-03-19_110241.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/CA/:id/dictamen",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"CA",
+						":id",
+						"dictamen"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_154"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar dictamen",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ca/:id/dictamen/:id_dictamen",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca",
+						":id",
+						"dictamen",
+						":id_dictamen"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_154"
+						},
+						{
+							"key": "id_dictamen",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar integrante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"codigo\": \"21567853\",\n\t\"tipo\": \"Colaborador\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/ca/:id/integrante",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca",
+						":id",
+						"integrante"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_155"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Quitar integrante",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:27017/CSA/CA/:id/integrante/:codigo",
+					"host": [
+						"localhost"
+					],
+					"port": "27017",
+					"path": [
+						"CSA",
+						"CA",
+						":id",
+						"integrante",
+						":codigo"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						},
+						{
+							"key": "codigo",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Descargar Expediente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ca/:id/expediente/descargar",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca",
+						":id",
+						"expediente",
+						"descargar"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_154"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Descargar dictamen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ca/:id/dictamen/:id_dictamen/descargar",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ca",
+						":id",
+						"dictamen",
+						":id_dictamen",
+						"descargar"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CA_154"
+						},
+						{
+							"key": "id_dictamen",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
