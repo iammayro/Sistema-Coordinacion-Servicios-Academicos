@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 // Rutas divididas en modulos
 app.use('/', require('./Routes/siipersu.routes'));
 app.use('/', require('./Routes/CA.routes'));
+app.use('/pro', require('./Routes/prodep.routes'));
 
 // Correr el puerto
 app.listen(process.env.PORT, function() {
