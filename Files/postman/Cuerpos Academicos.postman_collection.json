@@ -1,11 +1,243 @@
 {
 	"info": {
-		"_postman_id": "4d34b24d-34a7-443d-9f2c-b059fd645fdb",
+		"_postman_id": "09941497-6bcf-4fa8-a82e-419a7e260c8e",
 		"name": "Cuerpos Academicos",
 		"description": "Todos los request de Cuerpos Academicos, incluyendo insercion de Nuevos Cuerpos Academicos e Integrantes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "iniciar sesion",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c96de93c-4703-4efe-bd75-05bbfa333c3d",
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"123456789\",\n\t\"nip\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/OAuth/iniciar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"OAuth",
+								"iniciar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recuperar contraseña",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c96de93c-4703-4efe-bd75-05bbfa333c3d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"123456789\",\n\t\"imss\": \"djbhhgywbsas\",\n\t\"rfc\": \"fdsafdsfasdfasdf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/OAuth/recuperar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"OAuth",
+								"recuperar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validar token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c96de93c-4703-4efe-bd75-05bbfa333c3d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/OAuth/validar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"OAuth",
+								"validar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cambiar contraseña",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c96de93c-4703-4efe-bd75-05bbfa333c3d",
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nip\": \"12345678\",\n\t\"validation_code\": \"33193648dc5c4f2d1e1d0183019d2f924af86d4d9e9992005a476e2a2c0b717a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/OAuth/cambiar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"OAuth",
+								"cambiar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "u",
+			"item": [
+				{
+					"name": "crear perfil",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"123456789\",\n    \"nip\": \"12345678\",\n    \"tipo\": \"maestro\",\n    \"status\": \"activo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/OAuth",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"OAuth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear perfil toda la informacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": \"123456789\",\n    \"nip\": \"12345678\",\n    \"tipo\": \"maestro\",\n    \"status\": \"activo\",\n    \"direccion_nacimiento\": {\n        \"ciudad\": \"Barcelona\",\n        \"estado\": \"Jalisco\",\n        \"pais\": \"España\"\n    },\n    \"direccion_actual\": {\n        \"telefono\": \"3311225566\",\n        \"ciudad\": \"Tangamandapio jr\",\n        \"estado\": \"Jalisco\",\n        \"pais\": \"Mexico\",\n        \"calle\": \"Morelos\",\n        \"colonia\": \"Jardines Vallarta\",\n        \"codigo_postal\": \"45897\"\n    },\n    \"oficina\": {\n        \"telefono\": \"3366998877\",\n        \"extension\": \"12345\"\n    },\n    \"personal\": {\n        \"nombres\": \"Fernando Emmanuel\",\n        \"apellido_paterno\": \"Carvajal\",\n        \"apellido_materno\": \"Rojas\",\n        \"correo\": \"carlos.mayorga@hotmail.com\",\n        \"telefono\": \"3366555889\",\n        \"genero\": \"H\",\n        \"estado_civil\": \"Soltero\",\n        \"fecha_nacimiento\": \"1998-03-24\",\n        \"curp\": \"PENE660720HMCXTN06\",\n        \"imss\": \"djbhhgywbsas\",\n        \"rfc\": \"fdsafdsfasdfasdf\"\n    },\n    \"laboral\": {\n        \"puesto\": \"Maestro\",\n        \"correo\": \"manuel.mayorgar@alumnos.udg.mx\",\n        \"nombramiento\": \"I Asociado B\",\n        \"contratos_administrativos\": [\n            { \n                \"nombre\": \"no se que va aqui\",\n                \"temporalidad\": \"tiempo completo\",\n                \"fecha_inicio\": \"2002-03-24\",\n                \"fecha_fin\": null,\n                \"turno\": \"matutino\",\n                \"carga_horaria\": 40,\n                \"status\": \"activo\"\n            }\n        ],\n        \"contratos_academicos\": [\n            { \n                \"nombre\": \"no se que va aqui\" ,\n                \"temporalidad\": \"tiempo completo\",\n                \"fecha_inicio\": \"2002-03-24\",\n                \"fecha_fin\": null,\n                \"turno\": \"matutino\",\n                \"carga_horaria\": 40,\n                \"status\": \"activo\"\n            }\n        ]\n    }, \n    \"notificaciones\": [\n        {\n            \"mensaje\": \"Ya casi llega navidad\",\n            \"fecha_envio\": \"2002-03-24\",\n            \"visto\": false\n        }\n    ],\n    \"datos_academicos\": [\n        {\n            \"titulo\": \"Ingeniero de Software\",\n            \"fecha_inicio\": \"1998-03-24\",\n            \"fecha_fin\": \"2005-03-24\",\n            \"universidad\": \"Universidad de Guadalajara\",\n            \"grado\": \"Ingenieria\"\n        }\n    ],\n    \"curriculum\": {\n        \"idiomas\": [\n            {\n                \"idioma\": \"Español\",\n                \"habla\": 100,\n                \"comprension\": 100,\n                \"lectura\": 100,\n                \"escritura\": 100\n            }\n        ],\n        \"programas\": [\n            {\n                \"programa\": \"office\",\n                \"uso\": 80\n            }\n        ],\n        \"posiciones_trabajo\": [\n            {\n                \"posicion\": \"Jefe de Departamento\",\n                \"institucion\": \"UdG\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"fichas_bibliograficas\": [\n            {\n                \"ficha\": \"Ficha de Investigación uno.\"\n            }\n        ],\n        \"materias_impartidas\": [\n            {\n                \"materia\": \"Matematicas\",\n                \"numero_seccion\": 16,\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"asociaciones_profesionales\": [\n            {\n                \"asociacion\": \"Asociacion de Maestros\",\n                \"tipo_membresia\": \"Socio\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"experiencias_profesionales\": [\n            {\n                \"posicion\": \"Jefe\",\n                \"compania\": \"INTEL\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"premios\": [\n            {\n                \"premio\": \"Ganado de Programacion\",\n                \"fecha\": \"2016-02-01\"\n            }\n        ],\n        \"logros\": [\n            {\n                \"logo\": \"Ganado de Programacion\",\n                \"fecha\": \"2016-02-01\"\n            }\n        ],\n        \"productos\": {\n            \"libros\": 1,\n            \"notas_de_clase\": 2,\n            \"material_didactico\": 3,\n            \"manual_de_practicas\": 5,\n            \"articulos\": 5,\n            \"memorias_del_congreso\": 6,\n            \"patentes\": 10,\n            \"articulos_de_divulgacion\": 9,\n            \"participacion_en_foros\": 10,\n            \"servicios_a_la_industria\": 1,\n            \"convenios_con_la_industria\": 2\n        }\n    },\n    \"planes\": {\n        \"plan_trabajo\": [\n            {\n                \"calendario\": \"A\",\n                \"fecha\": \"2020-10-10\",\n                \"programa\": \"Avances Tecnologicos\",\n                \"materia\": \"Ingenieria de Software\",\n                \"formacion_docente\": \"No se que va qui\",\n                \"actividades_de_apoyo\": \"Volar Alto\",\n                \"numero_de_grupos\": 2,\n                \"nombre_de_linea\": \"Inovación en Tec\",\n                \"nombre_proyecto\": \"Proyecto 3\",\n                \"progreso_anual\": 60,\n                \"progreso_anual_esperado\": 80,\n                \"descripcion_de_actividades\": \"Son muy interactivas\",\n                \"tutoria_estudiantil\": \"No mucho\",\n                \"ayuda_estudiantil\": \"Mucga\",\n                \"formacion_estudiantil\": \"Texto de prueba\",\n                \"participacion\": \"Texto de prueba\",\n                \"gestion_academica\": \"Texto de prueba\",\n                \"gestion_colectiva\": \"Texto de prueba\",\n                \"conocimiento_colectivo\": \"Texto de prueba\",\n                \"gestion_personal\": \"Texto de prueba\",\n                \"difusion\": \"Texto de prueba\",\n                \"formacion\": \"Texto de prueba\",\n                \"comentarios_adicionales\": \"Texto de prueba\",\n                \"docencia_horas\": 2,\n                \"lgac_horas\": 4,\n                \"asesorias_horas\": 5,\n                \"tutorias_horas\": 5,\n                \"gestion_horas\": 5,\n                \"difusion_horas\": 5,\n                \"formacion_posgrado_horas\": 5,\n                \"estado\": \"no aprobado\",\n                \"historial\": [\n                    {\n                        \"por\": \"Juan Pablo segundo\",\n                        \"fecha\": \"2020-12-12\",\n                        \"comentario\": \"No se aprobo por\",\n                        \"estado\": \"no aprobado\"\n                    }\n                ]\n            }\n        ],\n        \"informe\": [\n            {\n                \"fecha\": \"2020-10-10\",\n                \"programa\": \"Avances Tecnologicos\",\n                \"materia\": \"Ingenieria de Software\",\n                \"formacion_docente\": \"No se que va qui\",\n                \"actividades_de_apoyo\": \"Volar Alto\",\n                \"numero_de_grupos\": 2,\n                \"nombre_de_linea\": \"Inovación en Tec\",\n                \"nombre_proyecto\": \"Proyecto 3\",\n                \"progreso_del_ano\": 60,\n                \"progreso_del_ano_esperdo\": 80,\n                \"descripcion_de_actividades\": \"Son muy interactivas\",\n                \"tutoria_estudiantil\": \"No mucho\",\n                \"ayuda_estudiantil\": \"Mucga\",\n                \"formacion_estudiantil\": \"Texto de prueba\",\n                \"participacion\": \"Texto de prueba\",\n                \"gestion_academica\": \"Texto de prueba\",\n                \"gestion_colectiva\": \"Texto de prueba\",\n                \"conocimiento_colectivo\": \"Texto de prueba\",\n                \"gestion_personal\": \"Texto de prueba\",\n                \"difusion\": \"Texto de prueba\",\n                \"formacion\": \"Texto de prueba\",\n                \"comentarios_adicionales\": \"Texto de prueba\",\n                \"docencia_horas\": 2,\n                \"lgac_horas\": 4,\n                \"asesorias_horas\": 5,\n                \"tutorias_horas\": 5,\n                \"gestion_horas\": 5,\n                \"difusion_horas\": 5,\n                \"formacion_posgrado_horas\": 5,\n                \"estado\": \"no aprobado\",\n                \"historial\": [\n                    {\n                        \"por\": \"Juan Pablo segundo\",\n                        \"fecha\": \"2020-12-12\",\n                        \"comentario\": \"No se aprobo por\",\n                        \"estado\": \"no aprobado\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"cursos\": [\n        {\n            \"fecha_terminado\": \"2002-03-24\",\n            \"acreditado\": true\n        }\n    ],\n    \"prodep\": [\n        {\n            \"fecha_recibido\": \"2018-01-02\",\n            \"duracion_anios\": 3,\n            \"monto_economico\": 40000\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/OAuth",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"OAuth"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
 		{
 			"name": "Ver Cuerpos Academicos",
 			"request": {
