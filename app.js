@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 
 // Rutas divididas en modulos
 app.use('/OAuth', require('./Routes/auth.routes'));
+app.use('/u', require('./Routes/usuario.routes'));
 app.use('/', require('./Routes/CA.routes'));
 app.use('/pro', require('./Routes/prodep.routes'));
 

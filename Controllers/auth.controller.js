@@ -104,7 +104,7 @@ const isTokenValido = async (req, res, next) => {
       status: 401
     };
   }
-  console.log('usuario:', currentTrabajador._id);
+  // console.log('usuario:', currentTrabajador._id, currentTrabajador.tipo);
   return { isValid: true, user: currentTrabajador, message: '', status: 200 };
 };
 
@@ -121,7 +121,7 @@ exports.validarToken = catchAsync(async (req, res, next) => {
   next(new AppError(validacion.message, validacion.status));
 });
 
-exports.protect = catchAsync(async (req, res, next) => {
+exports.validarCredenciales = catchAsync(async (req, res, next) => {
   // Obtener solicitud y revisar que existe el token
   const validacion = await isTokenValido(req, res, next);
   if (validacion.isValid) {
@@ -132,11 +132,11 @@ exports.protect = catchAsync(async (req, res, next) => {
   next(new AppError(validacion.message, validacion.status));
 });
 
-exports.restrictTo = (...roles) => {
+exports.limitarAcceso = (...roles) => {
   return (req, res, next) => {
-    if (!roles.includes(req.user.role)) {
+    if (!roles.includes(req.user.tipo)) {
       return next(
-        new AppError('You do not have permission to perform this action', 403)
+        new AppError('No tienes permisos para ejecutar esta accion', 403)
       );
     }
     next();
