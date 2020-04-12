@@ -186,8 +186,8 @@
                 "numero_de_grupos": 2,
                 "nombre_de_linea": "Inovación en Tec",
                 "nombre_proyecto": "Proyecto 3",
-                "progreso_del_ano": 60, // %
-                "progreso_del_ano_esperdo": 80, // %
+                "progreso_anual": 60, // %
+                "progreso_anual_esperado": 80, // %
                 "descripcion_de_actividades": "Son muy interactivas",
                 "tutoria_estudiantil": "No mucho",
                 "ayuda_estudiantil": "Mucga",

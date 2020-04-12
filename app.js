@@ -1,24 +1,17 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
+
+// Handlers de errores
+const AppError = require('./Helpers/appError');
+const globalErrorHandler = require('./Middlewares/globalErrorHandler');
 
 const app = express();
 
-// Cargar las variables de entorno
-require('dotenv').config();
-
-// Conectar a mongoose
-mongoose.connect('mongodb://localhost:27017/CSA', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log(`[status] Conectado a Mongoose`);
-});
+// muestra logs de rutas llamadas (solo usar en development, nunca en produccion)
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 // Body parser
 app.use(
@@ -29,11 +22,18 @@ app.use(
 app.use(bodyParser.json());
 
 // Rutas divididas en modulos
-app.use('/', require('./Routes/siipersu.routes'));
+app.use('/OAuth', require('./Routes/auth.routes'));
 app.use('/', require('./Routes/CA.routes'));
 app.use('/pro', require('./Routes/prodep.routes'));
 
-// Correr el puerto
-app.listen(process.env.PORT, function() {
-  console.log(`[status] API Corriendo en el puerto ${process.env.PORT}`);
+// Cualquier llamada a ruta no especificada, regresar error 404
+app.all('*', (req, res, next) => {
+  next(
+    new AppError(`No existe la ruta: ${req.originalUrl} en este servidor!`, 404)
+  );
 });
+
+// middleware para regresar el error con la informacion del causante al cliente
+app.use(globalErrorHandler);
+
+module.exports = app;
