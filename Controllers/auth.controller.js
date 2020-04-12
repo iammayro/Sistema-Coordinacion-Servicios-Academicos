@@ -192,18 +192,3 @@ exports.cambiarContrasena = catchAsync(async (req, res, next) => {
   // iniciar sesion, mandar JWT
   mandarToken(user, 200, res);
 });
-
-exports.updatePassword = catchAsync(async (req, res, next) => {
-  // get user from collection
-  const user = await Trabajador.findById(req.user.id).select('+password');
-  // check if posted password is correct
-  if (!user.compararNip(req.body.passwordCurrent, user.password)) {
-    return next(new AppError('Your current password is wrong', 401));
-  }
-  // if password is correct, then update
-  user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
-  await user.save();
-  // log user in, send JWT
-  mandarToken(user, 200, res);
-});

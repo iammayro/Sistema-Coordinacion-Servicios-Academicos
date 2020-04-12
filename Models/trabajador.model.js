@@ -16,12 +16,20 @@ const TrabajadorSchema = new mongoose.Schema({
   },
   tipo: {
     type: String,
-    enum: ['maestro', 'coordinador de personal', 'jefe de departamento'],
+    enum: {
+      values: ['maestro', 'coordinador de personal', 'jefe de departamento'],
+      message:
+        'Los valores validos para tipo son: maestro, coordinador de personal, jefe de departamento'
+    },
     default: 'maestro'
   },
   status: {
     type: String,
-    enum: ['activo', 'jubilado', 'finado', 'despedido', 'renuncia'],
+    enum: {
+      values: ['activo', 'jubilado', 'finado', 'despedido', 'renuncia'],
+      message:
+        'Los valores validos para status son: activo, jubilado, finado, despedido, renuncia'
+    },
     default: 'activo'
   },
   direccion_nacimiento: {
@@ -58,7 +66,10 @@ const TrabajadorSchema = new mongoose.Schema({
     telefono: { type: String },
     genero: {
       type: String,
-      enum: ['H', 'M'],
+      enum: {
+        values: ['H', 'M'],
+        message: 'Los valores validos para genero son: H, M'
+      },
       default: 'H'
     },
     estado_civil: { type: String },
