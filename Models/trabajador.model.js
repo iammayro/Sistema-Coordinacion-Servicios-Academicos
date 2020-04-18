@@ -7,7 +7,7 @@ const TrabajadorSchema = new mongoose.Schema({
   codigo: {
     type: String,
     required: [true, 'Por favor proporciona un codigo'],
-    unique: true
+    unique: [true, 'Este codigo no es valido']
   },
   nip: {
     type: String,
@@ -78,32 +78,26 @@ const TrabajadorSchema = new mongoose.Schema({
     imss: { type: String },
     rfc: { type: String },
     foto_perfil: {
-      archivo: { type: Buffer },
-      extension_archivo: { type: String }
+      type: String,
+      default: 'default.jpg'
     },
     curp_digitalizado: {
-      archivo: { type: Buffer },
-      extension_archivo: { type: String }
+      type: String
     },
     imss_digitalizado: {
-      archivo: { type: Buffer },
-      extension_archivo: { type: String }
+      type: String
     },
     acta_nacimiento_digitalizado: {
-      archivo: { type: Buffer },
-      extension_archivo: { type: String }
+      type: String
     },
     rfc_digitalizado: {
-      archivo: { type: Buffer },
-      extension_archivo: { type: String }
+      type: String
     },
     ficha_unica_digitalizado: {
-      archivo: { type: Buffer },
-      extension_archivo: { type: String }
+      type: String
     },
     identificacion_digitalizado: {
-      archivo: { type: Buffer },
-      extension_archivo: { type: String }
+      type: String
     }
   },
   laboral: {

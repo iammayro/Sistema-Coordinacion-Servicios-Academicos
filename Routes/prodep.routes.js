@@ -5,7 +5,7 @@ const app = express();
 const prodepCtrl = require('../Controllers/prodep.controller');
 const prodepExpedienteCtrl = require('../Controllers/prodep_expediente.controller');
 const prodepDictamenCtrl = require('../Controllers/prodep_dictamen.controller');
-const archivos = require('../Middlewares/multer');
+const archivos = require('../Middlewares/multer').uploadFile;
 
 app.post('/:codigo', prodepCtrl.crearProdep);
 app.put('/:codigo/actualizar', prodepCtrl.actualizarProdep);

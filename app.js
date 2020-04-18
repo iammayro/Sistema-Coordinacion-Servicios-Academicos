@@ -21,6 +21,9 @@ app.use(
 );
 app.use(bodyParser.json());
 
+// ruta libre de archivos
+app.use('/u/', express.static(`${__dirname}/Files/uploads/users/images`));
+app.use('/u/', express.static(`${__dirname}/Files/uploads/users/docs`));
 // Rutas divididas en modulos
 app.use('/OAuth', require('./Routes/auth.routes'));
 app.use('/u', require('./Routes/usuario.routes'));

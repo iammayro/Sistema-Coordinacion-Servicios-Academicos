@@ -6,7 +6,7 @@ const controllerCA = require('../Controllers/CA.controller');
 const controllerEXP = require('../Controllers/CA.expediente.controller');
 const controllerDIC = require('../Controllers/CA.dictamen.controller');
 const controllerINT = require('../Controllers/CA.integrante.controller');
-const archivos = require('../Middlewares/multer');
+const archivos = require('../Middlewares/multer').uploadFile;
 
 app.post('/ca', controllerCA.postCuerpoAcademico);
 app.put('/ca/:id', controllerCA.putCuerpoAcademico);
