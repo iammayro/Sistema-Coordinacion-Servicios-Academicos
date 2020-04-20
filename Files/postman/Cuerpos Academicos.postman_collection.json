@@ -182,58 +182,1358 @@
 			"name": "u",
 			"item": [
 				{
-					"name": "crear perfil",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"codigo\": \"123456789\",\n    \"nip\": \"12345678\",\n    \"tipo\": \"maestro\",\n    \"status\": \"activo\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "Idiomas",
+					"item": [
+						{
+							"name": "Obtener idiomas",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/idioma",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"idioma"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/OAuth",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"OAuth"
-							]
+						{
+							"name": "Crear idioma",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"idioma\": \"Español\",\n    \"habla\": 100,\n    \"comprension\": 100,\n    \"lectura\": 100,\n    \"escritura\": 100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/idioma",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"idioma"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modificar idioma",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"idioma\": \"Francess\",\n    \"habla\": 100,\n    \"comprension\": 100,\n    \"lectura\": 100,\n    \"escritura\": 100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/idioma/5e9d26b3df09b9616c2298f4",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"idioma",
+										"5e9d26b3df09b9616c2298f4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Borrar idioma",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/idioma/5e9d26d9df09b9616c2298f7",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"idioma",
+										"5e9d26d9df09b9616c2298f7"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "crear perfil toda la informacion",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"codigo\": \"123456789\",\n    \"nip\": \"12345678\",\n    \"tipo\": \"maestro\",\n    \"status\": \"activo\",\n    \"direccion_nacimiento\": {\n        \"ciudad\": \"Barcelona\",\n        \"estado\": \"Jalisco\",\n        \"pais\": \"España\"\n    },\n    \"direccion_actual\": {\n        \"telefono\": \"3311225566\",\n        \"ciudad\": \"Tangamandapio jr\",\n        \"estado\": \"Jalisco\",\n        \"pais\": \"Mexico\",\n        \"calle\": \"Morelos\",\n        \"colonia\": \"Jardines Vallarta\",\n        \"codigo_postal\": \"45897\"\n    },\n    \"oficina\": {\n        \"telefono\": \"3366998877\",\n        \"extension\": \"12345\"\n    },\n    \"personal\": {\n        \"nombres\": \"Fernando Emmanuel\",\n        \"apellido_paterno\": \"Carvajal\",\n        \"apellido_materno\": \"Rojas\",\n        \"correo\": \"carlos.mayorga@hotmail.com\",\n        \"telefono\": \"3366555889\",\n        \"genero\": \"H\",\n        \"estado_civil\": \"Soltero\",\n        \"fecha_nacimiento\": \"1998-03-24\",\n        \"curp\": \"PENE660720HMCXTN06\",\n        \"imss\": \"djbhhgywbsas\",\n        \"rfc\": \"fdsafdsfasdfasdf\"\n    },\n    \"laboral\": {\n        \"puesto\": \"Maestro\",\n        \"correo\": \"manuel.mayorgar@alumnos.udg.mx\",\n        \"nombramiento\": \"I Asociado B\",\n        \"contratos_administrativos\": [\n            { \n                \"nombre\": \"no se que va aqui\",\n                \"temporalidad\": \"tiempo completo\",\n                \"fecha_inicio\": \"2002-03-24\",\n                \"fecha_fin\": null,\n                \"turno\": \"matutino\",\n                \"carga_horaria\": 40,\n                \"status\": \"activo\"\n            }\n        ],\n        \"contratos_academicos\": [\n            { \n                \"nombre\": \"no se que va aqui\" ,\n                \"temporalidad\": \"tiempo completo\",\n                \"fecha_inicio\": \"2002-03-24\",\n                \"fecha_fin\": null,\n                \"turno\": \"matutino\",\n                \"carga_horaria\": 40,\n                \"status\": \"activo\"\n            }\n        ]\n    }, \n    \"notificaciones\": [\n        {\n            \"mensaje\": \"Ya casi llega navidad\",\n            \"fecha_envio\": \"2002-03-24\",\n            \"visto\": false\n        }\n    ],\n    \"datos_academicos\": [\n        {\n            \"titulo\": \"Ingeniero de Software\",\n            \"fecha_inicio\": \"1998-03-24\",\n            \"fecha_fin\": \"2005-03-24\",\n            \"universidad\": \"Universidad de Guadalajara\",\n            \"grado\": \"Ingenieria\"\n        }\n    ],\n    \"curriculum\": {\n        \"idiomas\": [\n            {\n                \"idioma\": \"Español\",\n                \"habla\": 100,\n                \"comprension\": 100,\n                \"lectura\": 100,\n                \"escritura\": 100\n            }\n        ],\n        \"programas\": [\n            {\n                \"programa\": \"office\",\n                \"uso\": 80\n            }\n        ],\n        \"posiciones_trabajo\": [\n            {\n                \"posicion\": \"Jefe de Departamento\",\n                \"institucion\": \"UdG\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"fichas_bibliograficas\": [\n            {\n                \"ficha\": \"Ficha de Investigación uno.\"\n            }\n        ],\n        \"materias_impartidas\": [\n            {\n                \"materia\": \"Matematicas\",\n                \"numero_seccion\": 16,\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"asociaciones_profesionales\": [\n            {\n                \"asociacion\": \"Asociacion de Maestros\",\n                \"tipo_membresia\": \"Socio\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"experiencias_profesionales\": [\n            {\n                \"posicion\": \"Jefe\",\n                \"compania\": \"INTEL\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"premios\": [\n            {\n                \"premio\": \"Ganado de Programacion\",\n                \"fecha\": \"2016-02-01\"\n            }\n        ],\n        \"logros\": [\n            {\n                \"logo\": \"Ganado de Programacion\",\n                \"fecha\": \"2016-02-01\"\n            }\n        ],\n        \"productos\": {\n            \"libros\": 1,\n            \"notas_de_clase\": 2,\n            \"material_didactico\": 3,\n            \"manual_de_practicas\": 5,\n            \"articulos\": 5,\n            \"memorias_del_congreso\": 6,\n            \"patentes\": 10,\n            \"articulos_de_divulgacion\": 9,\n            \"participacion_en_foros\": 10,\n            \"servicios_a_la_industria\": 1,\n            \"convenios_con_la_industria\": 2\n        }\n    },\n    \"planes\": {\n        \"plan_trabajo\": [\n            {\n                \"calendario\": \"A\",\n                \"fecha\": \"2020-10-10\",\n                \"programa\": \"Avances Tecnologicos\",\n                \"materia\": \"Ingenieria de Software\",\n                \"formacion_docente\": \"No se que va qui\",\n                \"actividades_de_apoyo\": \"Volar Alto\",\n                \"numero_de_grupos\": 2,\n                \"nombre_de_linea\": \"Inovación en Tec\",\n                \"nombre_proyecto\": \"Proyecto 3\",\n                \"progreso_anual\": 60,\n                \"progreso_anual_esperado\": 80,\n                \"descripcion_de_actividades\": \"Son muy interactivas\",\n                \"tutoria_estudiantil\": \"No mucho\",\n                \"ayuda_estudiantil\": \"Mucga\",\n                \"formacion_estudiantil\": \"Texto de prueba\",\n                \"participacion\": \"Texto de prueba\",\n                \"gestion_academica\": \"Texto de prueba\",\n                \"gestion_colectiva\": \"Texto de prueba\",\n                \"conocimiento_colectivo\": \"Texto de prueba\",\n                \"gestion_personal\": \"Texto de prueba\",\n                \"difusion\": \"Texto de prueba\",\n                \"formacion\": \"Texto de prueba\",\n                \"comentarios_adicionales\": \"Texto de prueba\",\n                \"docencia_horas\": 2,\n                \"lgac_horas\": 4,\n                \"asesorias_horas\": 5,\n                \"tutorias_horas\": 5,\n                \"gestion_horas\": 5,\n                \"difusion_horas\": 5,\n                \"formacion_posgrado_horas\": 5,\n                \"estado\": \"no aprobado\",\n                \"historial\": [\n                    {\n                        \"por\": \"Juan Pablo segundo\",\n                        \"fecha\": \"2020-12-12\",\n                        \"comentario\": \"No se aprobo por\",\n                        \"estado\": \"no aprobado\"\n                    }\n                ]\n            }\n        ],\n        \"informe\": [\n            {\n                \"fecha\": \"2020-10-10\",\n                \"programa\": \"Avances Tecnologicos\",\n                \"materia\": \"Ingenieria de Software\",\n                \"formacion_docente\": \"No se que va qui\",\n                \"actividades_de_apoyo\": \"Volar Alto\",\n                \"numero_de_grupos\": 2,\n                \"nombre_de_linea\": \"Inovación en Tec\",\n                \"nombre_proyecto\": \"Proyecto 3\",\n                \"progreso_del_ano\": 60,\n                \"progreso_del_ano_esperdo\": 80,\n                \"descripcion_de_actividades\": \"Son muy interactivas\",\n                \"tutoria_estudiantil\": \"No mucho\",\n                \"ayuda_estudiantil\": \"Mucga\",\n                \"formacion_estudiantil\": \"Texto de prueba\",\n                \"participacion\": \"Texto de prueba\",\n                \"gestion_academica\": \"Texto de prueba\",\n                \"gestion_colectiva\": \"Texto de prueba\",\n                \"conocimiento_colectivo\": \"Texto de prueba\",\n                \"gestion_personal\": \"Texto de prueba\",\n                \"difusion\": \"Texto de prueba\",\n                \"formacion\": \"Texto de prueba\",\n                \"comentarios_adicionales\": \"Texto de prueba\",\n                \"docencia_horas\": 2,\n                \"lgac_horas\": 4,\n                \"asesorias_horas\": 5,\n                \"tutorias_horas\": 5,\n                \"gestion_horas\": 5,\n                \"difusion_horas\": 5,\n                \"formacion_posgrado_horas\": 5,\n                \"estado\": \"no aprobado\",\n                \"historial\": [\n                    {\n                        \"por\": \"Juan Pablo segundo\",\n                        \"fecha\": \"2020-12-12\",\n                        \"comentario\": \"No se aprobo por\",\n                        \"estado\": \"no aprobado\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"cursos\": [\n        {\n            \"fecha_terminado\": \"2002-03-24\",\n            \"acreditado\": true\n        }\n    ],\n    \"prodep\": [\n        {\n            \"fecha_recibido\": \"2018-01-02\",\n            \"duracion_anios\": 3,\n            \"monto_economico\": 40000\n        }\n    ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "programas",
+					"item": [
+						{
+							"name": "Obtener programas",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/programa",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"programa"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "localhost:3000/OAuth",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"OAuth"
-							]
+						{
+							"name": "Crear programa",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"programa\": \"Photoshop\",\n    \"uso\": 20\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/programa",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"programa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modificar programa",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"programa\": \"Photoshops\",\n    \"uso\": 20\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/programa/5e9d2996a249286577c6183c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"programa",
+										"5e9d2996a249286577c6183c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Borrar programa",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/programa/5e9d2996a249286577c6183c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"programa",
+										"5e9d2996a249286577c6183c"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Logros",
+					"item": [
+						{
+							"name": "Obtener logros",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/cv/logro",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"cv",
+										"logro"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear logro",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"logro\": \"Dormir despierto\",\n    \"fecha\": 1587360328938\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/logro",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"logro"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modificar logro",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"logro\": \"Dormir despierto\",\n    \"fecha\": 1587360328938\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/logro/5e9d325a748b3b74a86d0d16",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"logro",
+										"5e9d325a748b3b74a86d0d16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Borrar logro",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/logro/5e9d2996a249286577c6183c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"logro",
+										"5e9d2996a249286577c6183c"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Productos",
+					"item": [
+						{
+							"name": "Obtener productos",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/cv/producto",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"cv",
+										"producto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modificar producto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"libros\": 1,\n    \"notas_de_clase\": 2,\n    \"material_didactico\": 3,\n    \"manual_de_practicas\": 2,\n    \"articulos\": 1,\n    \"memorias_del_congreso\": 1,\n    \"patentes\": 1,\n    \"articulos_de_divulgacion\": 1,\n    \"participacion_en_foros\": 1,\n    \"servicios_a_la_industria\": 2,\n    \"convenios_con_la_industria\": 0\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/cv/producto",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"cv",
+										"producto"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "posiciones de trabajo",
+					"item": [
+						{
+							"name": "Obtener posiciones",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/cv/posicion",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"cv",
+										"posicion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear posicion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"posicion\": \"Barrendero\",\n    \"institucion\": \"Nasa baby\",\n    \"fecha_inicio\": 1587358303946,\n    \"fecha_fin\": 1587358303946\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/posicion",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"posicion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modificar posicion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"posicion\": \"Barrendero\",\n    \"institucion\": \"Nasa baby\",\n    \"fecha_inicio\": 1587358303946,\n    \"fecha_fin\": 1587358303946\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/posicion/5e9d2996a249286577c6183c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"posicion",
+										"5e9d2996a249286577c6183c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Borrar posicion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781/cv/posicion/5e9d2996a249286577c6183c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781",
+										"cv",
+										"posicion",
+										"5e9d2996a249286577c6183c"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Usuario",
+					"item": [
+						{
+							"name": "crear usuario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"codigo\": \"123456781\",\n    \"nip\": \"12345678\",\n    \"tipo\": \"maestro\",\n    \"status\": \"activo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modificar usuario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"codigo\": 123456788,\n\t\"personal\": {\n\t\t\"genero\": \"H\"\n\t},\n\t\"laboral\": {\n        \"puesto\": \"Uno super chido\",\n        \"correo\": \"carlos@alumnos.udg.mx\",\n        \"nombramiento\": \"I Asociado B\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cambiar status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"status\": \"activo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener usuario",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456781",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456781"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "obtener usuarios",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "crear usuario toda la informacion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"codigo\": \"123456789\",\n    \"nip\": \"12345678\",\n    \"tipo\": \"maestro\",\n    \"status\": \"activo\",\n    \"direccion_nacimiento\": {\n        \"ciudad\": \"Barcelona\",\n        \"estado\": \"Jalisco\",\n        \"pais\": \"España\"\n    },\n    \"direccion_actual\": {\n        \"telefono\": \"3311225566\",\n        \"ciudad\": \"Tangamandapio jr\",\n        \"estado\": \"Jalisco\",\n        \"pais\": \"Mexico\",\n        \"calle\": \"Morelos\",\n        \"colonia\": \"Jardines Vallarta\",\n        \"codigo_postal\": \"45897\"\n    },\n    \"oficina\": {\n        \"telefono\": \"3366998877\",\n        \"extension\": \"12345\"\n    },\n    \"personal\": {\n        \"nombres\": \"Fernando Emmanuel\",\n        \"apellido_paterno\": \"Carvajal\",\n        \"apellido_materno\": \"Rojas\",\n        \"correo\": \"carlos.mayorga@hotmail.com\",\n        \"telefono\": \"3366555889\",\n        \"genero\": \"H\",\n        \"estado_civil\": \"Soltero\",\n        \"fecha_nacimiento\": \"1998-03-24\",\n        \"curp\": \"PENE660720HMCXTN06\",\n        \"imss\": \"djbhhgywbsas\",\n        \"rfc\": \"fdsafdsfasdfasdf\"\n    },\n    \"laboral\": {\n        \"puesto\": \"Maestro\",\n        \"correo\": \"manuel.mayorgar@alumnos.udg.mx\",\n        \"nombramiento\": \"I Asociado B\",\n        \"contratos_administrativos\": [\n            { \n                \"nombre\": \"no se que va aqui\",\n                \"temporalidad\": \"tiempo completo\",\n                \"fecha_inicio\": \"2002-03-24\",\n                \"fecha_fin\": null,\n                \"turno\": \"matutino\",\n                \"carga_horaria\": 40,\n                \"status\": \"activo\"\n            }\n        ],\n        \"contratos_academicos\": [\n            { \n                \"nombre\": \"no se que va aqui\" ,\n                \"temporalidad\": \"tiempo completo\",\n                \"fecha_inicio\": \"2002-03-24\",\n                \"fecha_fin\": null,\n                \"turno\": \"matutino\",\n                \"carga_horaria\": 40,\n                \"status\": \"activo\"\n            }\n        ]\n    }, \n    \"notificaciones\": [\n        {\n            \"mensaje\": \"Ya casi llega navidad\",\n            \"fecha_envio\": \"2002-03-24\",\n            \"visto\": false\n        }\n    ],\n    \"datos_academicos\": [\n        {\n            \"titulo\": \"Ingeniero de Software\",\n            \"fecha_inicio\": \"1998-03-24\",\n            \"fecha_fin\": \"2005-03-24\",\n            \"universidad\": \"Universidad de Guadalajara\",\n            \"grado\": \"Ingenieria\"\n        }\n    ],\n    \"curriculum\": {\n        \"idiomas\": [\n            {\n                \"idioma\": \"Español\",\n                \"habla\": 100,\n                \"comprension\": 100,\n                \"lectura\": 100,\n                \"escritura\": 100\n            }\n        ],\n        \"programas\": [\n            {\n                \"programa\": \"office\",\n                \"uso\": 80\n            }\n        ],\n        \"posiciones_trabajo\": [\n            {\n                \"posicion\": \"Jefe de Departamento\",\n                \"institucion\": \"UdG\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"fichas_bibliograficas\": [\n            {\n                \"ficha\": \"Ficha de Investigación uno.\"\n            }\n        ],\n        \"materias_impartidas\": [\n            {\n                \"materia\": \"Matematicas\",\n                \"numero_seccion\": 16,\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"asociaciones_profesionales\": [\n            {\n                \"asociacion\": \"Asociacion de Maestros\",\n                \"tipo_membresia\": \"Socio\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"experiencias_profesionales\": [\n            {\n                \"posicion\": \"Jefe\",\n                \"compania\": \"INTEL\",\n                \"fecha_inicio\": \"1998-03-24\",\n                \"fecha_fin\": \"1998-03-24\"\n            }\n        ],\n        \"premios\": [\n            {\n                \"premio\": \"Ganado de Programacion\",\n                \"fecha\": \"2016-02-01\"\n            }\n        ],\n        \"logros\": [\n            {\n                \"logo\": \"Ganado de Programacion\",\n                \"fecha\": \"2016-02-01\"\n            }\n        ],\n        \"productos\": {\n            \"libros\": 1,\n            \"notas_de_clase\": 2,\n            \"material_didactico\": 3,\n            \"manual_de_practicas\": 5,\n            \"articulos\": 5,\n            \"memorias_del_congreso\": 6,\n            \"patentes\": 10,\n            \"articulos_de_divulgacion\": 9,\n            \"participacion_en_foros\": 10,\n            \"servicios_a_la_industria\": 1,\n            \"convenios_con_la_industria\": 2\n        }\n    },\n    \"planes\": {\n        \"plan_trabajo\": [\n            {\n                \"calendario\": \"A\",\n                \"fecha\": \"2020-10-10\",\n                \"programa\": \"Avances Tecnologicos\",\n                \"materia\": \"Ingenieria de Software\",\n                \"formacion_docente\": \"No se que va qui\",\n                \"actividades_de_apoyo\": \"Volar Alto\",\n                \"numero_de_grupos\": 2,\n                \"nombre_de_linea\": \"Inovación en Tec\",\n                \"nombre_proyecto\": \"Proyecto 3\",\n                \"progreso_anual\": 60,\n                \"progreso_anual_esperado\": 80,\n                \"descripcion_de_actividades\": \"Son muy interactivas\",\n                \"tutoria_estudiantil\": \"No mucho\",\n                \"ayuda_estudiantil\": \"Mucga\",\n                \"formacion_estudiantil\": \"Texto de prueba\",\n                \"participacion\": \"Texto de prueba\",\n                \"gestion_academica\": \"Texto de prueba\",\n                \"gestion_colectiva\": \"Texto de prueba\",\n                \"conocimiento_colectivo\": \"Texto de prueba\",\n                \"gestion_personal\": \"Texto de prueba\",\n                \"difusion\": \"Texto de prueba\",\n                \"formacion\": \"Texto de prueba\",\n                \"comentarios_adicionales\": \"Texto de prueba\",\n                \"docencia_horas\": 2,\n                \"lgac_horas\": 4,\n                \"asesorias_horas\": 5,\n                \"tutorias_horas\": 5,\n                \"gestion_horas\": 5,\n                \"difusion_horas\": 5,\n                \"formacion_posgrado_horas\": 5,\n                \"estado\": \"no aprobado\",\n                \"historial\": [\n                    {\n                        \"por\": \"Juan Pablo segundo\",\n                        \"fecha\": \"2020-12-12\",\n                        \"comentario\": \"No se aprobo por\",\n                        \"estado\": \"no aprobado\"\n                    }\n                ]\n            }\n        ],\n        \"informe\": [\n            {\n                \"fecha\": \"2020-10-10\",\n                \"programa\": \"Avances Tecnologicos\",\n                \"materia\": \"Ingenieria de Software\",\n                \"formacion_docente\": \"No se que va qui\",\n                \"actividades_de_apoyo\": \"Volar Alto\",\n                \"numero_de_grupos\": 2,\n                \"nombre_de_linea\": \"Inovación en Tec\",\n                \"nombre_proyecto\": \"Proyecto 3\",\n                \"progreso_del_ano\": 60,\n                \"progreso_del_ano_esperdo\": 80,\n                \"descripcion_de_actividades\": \"Son muy interactivas\",\n                \"tutoria_estudiantil\": \"No mucho\",\n                \"ayuda_estudiantil\": \"Mucga\",\n                \"formacion_estudiantil\": \"Texto de prueba\",\n                \"participacion\": \"Texto de prueba\",\n                \"gestion_academica\": \"Texto de prueba\",\n                \"gestion_colectiva\": \"Texto de prueba\",\n                \"conocimiento_colectivo\": \"Texto de prueba\",\n                \"gestion_personal\": \"Texto de prueba\",\n                \"difusion\": \"Texto de prueba\",\n                \"formacion\": \"Texto de prueba\",\n                \"comentarios_adicionales\": \"Texto de prueba\",\n                \"docencia_horas\": 2,\n                \"lgac_horas\": 4,\n                \"asesorias_horas\": 5,\n                \"tutorias_horas\": 5,\n                \"gestion_horas\": 5,\n                \"difusion_horas\": 5,\n                \"formacion_posgrado_horas\": 5,\n                \"estado\": \"no aprobado\",\n                \"historial\": [\n                    {\n                        \"por\": \"Juan Pablo segundo\",\n                        \"fecha\": \"2020-12-12\",\n                        \"comentario\": \"No se aprobo por\",\n                        \"estado\": \"no aprobado\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"cursos\": [\n        {\n            \"fecha_terminado\": \"2002-03-24\",\n            \"acreditado\": true\n        }\n    ],\n    \"prodep\": [\n        {\n            \"fecha_recibido\": \"2018-01-02\",\n            \"duracion_anios\": 3,\n            \"monto_economico\": 40000\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/OAuth",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"OAuth"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Documentos",
+					"item": [
+						{
+							"name": "subir imagen de perfil",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "foto_perfil",
+											"type": "file",
+											"src": "/home/carlos/Documentos/udemy/mongo node course/complete-node-bootcamp/4-natours/starter/dev-data/img/leo.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/subir/perfil",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"subir",
+										"perfil"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subir curp",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "curp_digitalizado",
+											"type": "file",
+											"src": "/home/carlos/Documentos/universidad/administracion/tarea 2.pdf"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/subir/curp",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"subir",
+										"curp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subir imss",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "imss_digitalizado",
+											"type": "file",
+											"src": "/home/carlos/Documentos/universidad/administracion/tarea 2.pdf"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/subir/imss",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"subir",
+										"imss"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subir rfc",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "rfc_digitalizado",
+											"type": "file",
+											"src": "/home/carlos/Documentos/universidad/administracion/tarea 2.pdf"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/subir/rfc",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"subir",
+										"rfc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subir ficha unica",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ficha_unica_digitalizado",
+											"type": "file",
+											"src": "/home/carlos/Documentos/universidad/administracion/tarea 2.pdf"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/subir/ficha-unica",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"subir",
+										"ficha-unica"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subir acta nacimiento",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acta_nacimiento_digitalizado",
+											"type": "file",
+											"src": "/home/carlos/Documentos/universidad/administracion/tarea 2.pdf"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/subir/acta-nacimiento",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"subir",
+										"acta-nacimiento"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subir identificacion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "identificacion_digitalizado",
+											"type": "file",
+											"src": "/home/carlos/Documentos/universidad/administracion/tarea 2.pdf"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/123456789/subir/identificacion",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"123456789",
+										"subir",
+										"identificacion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener imagen perfil o documento (personal)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/u/5e927322c3252b303d50298d-1587177397326.pdf",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"u",
+										"5e927322c3252b303d50298d-1587177397326.pdf"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}

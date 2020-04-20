@@ -79,7 +79,7 @@ const TrabajadorSchema = new mongoose.Schema({
     rfc: { type: String },
     foto_perfil: {
       type: String,
-      default: 'default.jpg'
+      default: 'default.png'
     },
     curp_digitalizado: {
       type: String
@@ -178,25 +178,68 @@ const TrabajadorSchema = new mongoose.Schema({
   curriculum: {
     idiomas: [
       {
-        idioma: { type: String },
-        habla: { type: Number },
-        comprension: { type: Number },
-        lectura: { type: Number },
-        escritura: { type: Number }
+        idioma: {
+          type: String,
+          required: [true, 'Por favor ingresa un idioma']
+        },
+        habla: {
+          type: Number,
+          required: [true, 'Ingresa un valor de habla'],
+          min: [0, 'No se admiten negativos'],
+          max: [100, 'El maximo es 100']
+        },
+        comprension: {
+          type: Number,
+          required: [true, 'Ingresa un valor de comprension'],
+          min: [0, 'No se admiten negativos'],
+          max: [100, 'El maximo es 100']
+        },
+        lectura: {
+          type: Number,
+          required: [true, 'Ingresa un valor de lectura'],
+          min: [0, 'No se admiten negativos'],
+          max: [100, 'El maximo es 100']
+        },
+        escritura: {
+          type: Number,
+          required: [true, 'Ingresa un valor de escritura'],
+          min: [0, 'No se admiten negativos'],
+          max: [100, 'El maximo es 100']
+        }
       }
     ],
     programas: [
       {
-        programa: { type: String },
-        uso: { type: Number }
+        programa: {
+          type: String,
+          required: [true, 'Por favor ingresa un programa']
+        },
+        uso: {
+          type: Number,
+          required: [true, 'Ingresa un valor de uso'],
+          min: [0, 'No se admiten negativos'],
+          max: [100, 'El maximo es 100']
+        }
       }
     ],
     posiciones_trabajo: [
       {
-        posicion: { type: String },
-        institucion: { type: String },
-        fecha_inicio: { type: String },
-        fecha_fin: { type: String }
+        posicion: {
+          type: String,
+          required: [true, 'Por favor ingresa una posicion']
+        },
+        institucion: {
+          type: String,
+          required: [true, 'Por favor ingresa una institucion']
+        },
+        fecha_inicio: {
+          type: Date,
+          required: [true, 'Por favor ingresa una fecha de inicio']
+        },
+        fecha_fin: {
+          type: Date,
+          required: [true, 'Por favor ingresa una fecha de finalizacion']
+        }
       }
     ],
     fichas_bibliograficas: [
@@ -230,28 +273,84 @@ const TrabajadorSchema = new mongoose.Schema({
     ],
     premios: [
       {
-        premio: { type: String },
-        fecha: { type: String }
+        premio: {
+          type: String,
+          required: [true, 'Por favor ingresa un premio']
+        },
+        fecha: {
+          type: Date,
+          required: [true, 'Por favor ingresa una fecha']
+        }
       }
     ],
     logros: [
       {
-        logo: { type: String },
-        fecha: { type: String }
+        logro: {
+          type: String,
+          required: [true, 'Por favor ingresa un logro']
+        },
+        fecha: {
+          type: Date,
+          required: [true, 'Por favor ingresa una fecha']
+        }
       }
     ],
     productos: {
-      libros: { type: Number },
-      notas_de_clase: { type: Number },
-      material_didactico: { type: Number },
-      manual_de_practicas: { type: Number },
-      articulos: { type: Number },
-      memorias_del_congreso: { type: Number },
-      patentes: { type: Number },
-      articulos_de_divulgacion: { type: Number },
-      participacion_en_foros: { type: Number },
-      servicios_a_la_industria: { type: Number },
-      convenios_con_la_industria: { type: Number }
+      libros: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de libros'],
+        default: 0
+      },
+      notas_de_clase: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de notas de clase'],
+        default: 0
+      },
+      material_didactico: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de material didactico'],
+        default: 0
+      },
+      manual_de_practicas: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de manual de practicas'],
+        default: 0
+      },
+      articulos: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de articulos'],
+        default: 0
+      },
+      memorias_del_congreso: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de memorias del congreso'],
+        default: 0
+      },
+      patentes: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de patentes'],
+        default: 0
+      },
+      articulos_de_divulgacion: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de articulos de divulgacion'],
+        default: 0
+      },
+      participacion_en_foros: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de participacion en foros'],
+        default: 0
+      },
+      servicios_a_la_industria: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de servicios a la industria'],
+        default: 0
+      },
+      convenios_con_la_industria: {
+        type: Number,
+        required: [true, 'Ingresa cantidad de convenios con la industria'],
+        default: 0
+      }
     }
   },
   planes: {

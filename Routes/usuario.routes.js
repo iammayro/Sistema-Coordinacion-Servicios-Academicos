@@ -23,9 +23,10 @@ router
 
 router
   .route('/:codigo')
-  .get(usuarioController.mostrarUsuario)
+  .get(usuarioController.validarAlcance, usuarioController.mostrarUsuario)
   .put(usuarioController.validarAlcance, usuarioController.modificarUsuario)
   .delete(
+    usuarioController.validarAlcance,
     authController.limitarAcceso('coordinador de personal'),
     usuarioController.borrarUsuario
   );
@@ -105,5 +106,50 @@ router
     ),
     usuarioController.modificarUsuario
   );
-  
+
+router
+  .route('/:codigo/cv/idioma')
+  .get(usuarioController.validarAlcance, usuarioController.getIdiomas)
+  .post(usuarioController.validarAlcance, usuarioController.agregarIdioma);
+
+router
+  .route('/:codigo/cv/idioma/:id')
+  .delete(usuarioController.validarAlcance, usuarioController.borrarIdioma)
+  .put(usuarioController.validarAlcance, usuarioController.modificarIdioma);
+
+router
+  .route('/:codigo/cv/programa')
+  .get(usuarioController.validarAlcance, usuarioController.getProgramas)
+  .post(usuarioController.validarAlcance, usuarioController.agregarPrograma);
+
+router
+  .route('/:codigo/cv/programa/:id')
+  .delete(usuarioController.validarAlcance, usuarioController.borrarPrograma)
+  .put(usuarioController.validarAlcance, usuarioController.modificarPrograma);
+
+router
+  .route('/:codigo/cv/posicion')
+  .get(usuarioController.validarAlcance, usuarioController.getPosiciones)
+  .post(usuarioController.validarAlcance, usuarioController.agregarPosicion);
+
+router
+  .route('/:codigo/cv/posicion/:id')
+  .delete(usuarioController.validarAlcance, usuarioController.borrarPosicion)
+  .put(usuarioController.validarAlcance, usuarioController.modificarPosicion);
+
+router
+  .route('/:codigo/cv/logro')
+  .get(usuarioController.validarAlcance, usuarioController.getLogros)
+  .post(usuarioController.validarAlcance, usuarioController.agregarLogro);
+
+router
+  .route('/:codigo/cv/logro/:id')
+  .delete(usuarioController.validarAlcance, usuarioController.borrarLogro)
+  .put(usuarioController.validarAlcance, usuarioController.modificarLogro);
+
+router
+  .route('/:codigo/cv/producto')
+  .get(usuarioController.validarAlcance, usuarioController.getProductos)
+  .put(usuarioController.validarAlcance, usuarioController.modificarProducto);
+
 module.exports = router;
