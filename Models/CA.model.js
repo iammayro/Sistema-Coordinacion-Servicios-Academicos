@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const schema = mongoose.Schema;
 
 const CuerpoAcademicoSchema = new mongoose.Schema({
   clave: { type: String, require: true },
@@ -6,11 +7,15 @@ const CuerpoAcademicoSchema = new mongoose.Schema({
   duracion_anios: { type: Number },
   nivel: { type: String }, // en formcion | en consolidacion | consolidado
   nombre: { type: String },
-  dictamen_digitalizado: { type: Buffer },
+  dictamen_digitalizado: [
+    { 
+      dictamen: {type: Buffer} 
+    }
+  ],
   expediente_digitalizado: { type: Buffer },
   integrantes: [
     {
-      integrante: { type: String, ref: 'trabajadores' }, // Referencia a trabajador
+      integrante: { type: schema.Types.ObjectId, ref: 'trabajadores' }, // Referencia a trabajador
       tipo: { type: String } // representante | integrante | colaborador
     }
   ]
