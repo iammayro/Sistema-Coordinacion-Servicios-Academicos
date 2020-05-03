@@ -10,9 +10,7 @@ const storage = multer.diskStorage({
   }
 });
 
-exports.uploadFile = multer({
-  storage: storage
-});
+
 
 // Para imagenes
 const multerStorage = multer.memoryStorage();
@@ -42,6 +40,10 @@ const multerFilterImage = (req, file, cb) => {
     );
   }
 };
+exports.uploadFile = multer({
+  storage: storage,
+  fileFilter: multerFilterFile
+});
 
 exports.uploadImage = multer({
   storage: multerStorage,
