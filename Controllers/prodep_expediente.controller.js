@@ -1,101 +1,145 @@
 const Trabajador = require('../Models/trabajador.model');
 const fs = require('fs').promises;
+const catchAsync = require('../Helpers/catchAsync');
+const AppError = require('../Helpers/appError');
 
-  module.exports.subirExpediente = async(req, res)=>{
-    try {
-      const resp = await Trabajador.findOne({codigo: req.params.codigo});
-      var laboral = resp.laboral.contratos_academicos[resp.laboral.contratos_academicos.length - 1];
-      if(resp.status === "activo" && laboral.temporalidad === "tiempo completo"){
-        var dir = "./Files/uploads/" + req.params.codigo + "/expediente/";
-        var expedienteDigitalizado = req.file.originalname;
-        var fileType = req.file.mimetype;
-        var errorH;
-        await fs.mkdir(dir, {recursive: true}).catch(function errHandler(e){
-            errorH = e;
+module.exports.subirExpediente = catchAsync (async(req, res, next)=>{
+    var resp = await Trabajador.findOne({codigo: req.params.codigo});
+    var laboral = resp.laboral.contratos_academicos[resp.laboral.contratos_academicos.length - 1];
+    if(resp.status === "activo" && laboral.temporalidad === "tiempo completo")
+    {
+        const dir = `./Files/uploads/${req.params.codigo}/expediente/`;
+        const expedienteDigitalizado = req.file.originalname;
+        const fileType = req.file.mimetype;
+        await fs.mkdir(dir, {recursive: true}, err =>{
+          if (err) {
+            return next(
+              new AppError('Error al crear la carpeta', 500)
+            );
+          }
         });
-        if(errorH)
-            return res.json({ok: false, errorH});
-        await fs.rename('./Files/uploads/'+expedienteDigitalizado, dir + expedienteDigitalizado).catch(function errHandler(e){
-            errorH = e;
-        });
-        if(errorH)
-            return res.json({ok: false, errorH});
+        await fs.rename(`./Files/uploads/${expedienteDigitalizado}`, dir + expedienteDigitalizado, err =>{
+        if (err) {
+            return next(
+              new AppError('Error al mover o sobreescribir el archivo', 500)
+            );
+          }
+        }
+        );
         const buffer = await fs.readFile(dir + expedienteDigitalizado);
         if(!buffer)
-            return res.json({ok: false, message: 'No existe el archivo'});
+        {
+          return next(
+            new AppError(
+                'Error al leer el documento',
+                500
+                )
+          );
+        }
         var last = resp.prodep.length-1;
         resp.prodep[last].expediente_digitalizado.archivo = buffer;
         resp.prodep[last].expediente_digitalizado.extension_archivo = fileType;
-        await resp.save();
+        const PROD = await resp.save();
+        if(!PROD)
+        {
+          return next(
+            new AppError('Error al guardar expediente', 500)
+          );
+        }
         const prod = resp.prodep[last];
-        res.json({ok: true, prod});
-      }else{
-        res.json({ok: false, message: 'El profesor no es de tiempo completo o no esta activo en SIIPERSU'});
+        res.status(200).json({ok: true, prod});
+    }
+    else
+      {
+        return next(
+          new AppError('El profesor no es de tiempo completo o no esta activo en SIIPERSU', 400)
+        );
       }
-    } catch (error) {
-        res.json({ok: false, error});
-    }
-  }
+});
 
-  module.exports.actualizarExpediente = async(req, res)=>{
-    try {
-      const resp = await Trabajador.findOne({codigo: req.params.codigo});
-      var laboral = resp.laboral.contratos_academicos[resp.laboral.contratos_academicos.length - 1];
-      if(resp.status === "activo" && laboral.temporalidad === "tiempo completo"){
-        var dir = './Files/uploads/'+req.params.codigo+'/expediente/';
-        var expedienteDigitalizado = req.file.originalname;
-        var errorH;
-        await fs.rename('./Files/uploads/'+expedienteDigitalizado, dir + expedienteDigitalizado).catch(function errHandler(e){
-            errorH = e;
-        });
-        if(errorH)
-            return res.json({ok: false, errorH});
-        const buffer = await fs.readFile(dir + expedienteDigitalizado);
-        if(!buffer)
-            return res.json({ok: false, message: 'No existe el archivo'});
-        const resp = await Trabajador.findOne({codigo: req.params.codigo});
-        var last = resp.prodep.length-1;
-        resp.prodep[last].expediente_digitalizado.archivo = buffer;
-        resp.prodep[last].expediente_digitalizado.extension_archivo = fileType;
-        await resp.save();
-        const prod = resp.prodep[last];
-        res.json({ok: true, prod});
-      }else{
-        res.json({ok: false, message: 'El profesor no es de tiempo completo o no esta activo en SIIPERSU'});
+module.exports.actualizarExpediente = catchAsync(async(req, res, next)=>{
+  const resp = await Trabajador.findOne({codigo: req.params.codigo});
+  if(!resp)
+  {
+    return next(
+      new AppError('El codigo no esta en la base de datos', 400)
+    );
+  }
+  var laboral = resp.laboral.contratos_academicos[resp.laboral.contratos_academicos.length - 1];
+  if(resp.status === "activo" && laboral.temporalidad === "tiempo completo")
+  {
+    const dir = './Files/uploads/'+req.params.codigo+'/expediente/';
+    const expedienteDigitalizado = req.file.originalname;
+    const fileType = req.file.mimetype;
+    await fs.rename(`./Files/uploads/${expedienteDigitalizado}`, dir + expedienteDigitalizado, err =>{
+      if (err)
+      {
+          return next(
+            new AppError('Error al mover o sobreescribir el archivo', 500)
+          );
       }
-    } catch (error) {
-        res.json({ok: false, error});
+    });
+    const buffer = await fs.readFile(dir + expedienteDigitalizado);
+    if(!buffer)
+    {
+      return next(
+        new AppError('Error al leer el archivo', 500)
+      );
     }
+    var last = resp.prodep.length-1;
+    resp.prodep[last].expediente_digitalizado.archivo = buffer;
+    resp.prodep[last].expediente_digitalizado.extension_archivo = fileType;
+    const PROD = await resp.save();
+    if(!PROD)
+    {
+      return next(
+        new AppError('Error al actualizar expediente', 500)
+      );
+    }
+    const prod = resp.prodep[last];
+    res.status(200).json({ok: true, prod});
   }
+  else
+    {
+      return next(
+        new AppError('El profesor no es de tiempo completo o no esta activo en SIIPERSU', 400)
+      );
+    }
+});
 
-  module.exports.descargarExpediente = async(req, res)=>{
-    try {
-        var codigo = req.params.codigo;
-        var dir = './Files/temp/'+codigo+'.pdf';
-        const WK = await Trabajador.findOne({codigo: codigo});
-        var last = WK.prodep.length-1;
-        const buffer = WK.prodep[last].expediente_digitalizado.archivo;
-        var errorH;
-        await fs.writeFile(dir, buffer).catch(function errHandler(e){
-            errorH = e;
-        });
-        if(errorH)
-            return res.json({ok: false, errorH});
-        res.download(dir, 'Expediente'+codigo+'.pdf', function(err){
-            fs.unlink(dir);
-        });
-    } catch (error) {
-        res.json({ok: false, error});
+module.exports.descargarExpediente = catchAsync(async(req, res, next)=>{
+  const codigo = req.params.codigo;
+  const dir = `./Files/temp/${codigo}.pdf`;
+  const WK = await Trabajador.findOne({codigo: codigo});
+  var last = WK.prodep.length-1;
+  const buffer = WK.prodep[last].expediente_digitalizado.archivo;
+  await fs.writeFile(dir, buffer, err =>{
+  if (err) {
+      return next(
+        new AppError('Error al escribir el archivo', 500)
+      );
     }
-  }
+  });
+  res.status(200).download(dir, `Expediente${codigo}.pdf`, function(err){
+      fs.unlink(dir);
+  });
+});
 
-  module.exports.verExpediente = async(req, res)=>{
-    try {
-        const resp = await Trabajador.findOne({codigo: req.params.codigo});
-        var last = resp.prodep.length - 1;
-        const exp = resp.prodep[last].expediente_digitalizado;
-        res.json({ok: true, exp});
-    } catch (error) {
-        res.json({ok: false, error});
-    }
+module.exports.verExpediente = catchAsync(async(req, res, next)=>{
+  const resp = await Trabajador.findOne({codigo: req.params.codigo});
+  if(!resp)
+  {
+    return next(
+      new AppError('El codigo no esta en la base de datos', 400)
+      );
   }
+  var last = resp.prodep.length - 1;
+  const exp = resp.prodep[last].expediente_digitalizado;
+  if(!exp)
+  {
+    return next(
+      new AppError('El archivo no esta en la base de datos', 400)
+    );
+  }
+  res.status(200).json({ok: true, exp});
+});
